@@ -1,0 +1,18 @@
+[
+    {
+        "profile_name": "React Native Developer",
+        "company_name": "TCS Infotech",
+        "location": "Bhopal",
+        "experience": "2-4 Years",
+        "salary": "2,00,000 - 4,00,000",
+        "posted": "20 days ago",
+        "total_views": 53,
+        "total_applicants": 3,
+        "job_id": 200013393,
+        "job_description": ["Work as part of a team to build React Native for FullStack's clients.", "Architect, build and maintain excellent React Native applications with clean code.", "Implement pixel perfect UI's that match designs.", "Implement clean, modern, smooth animations and transitions that provide an excellent user experience.", "Integrate third-party API's.", "Write unit and integration tests.", "Work with native modules when required.", "Assist with building estimates.", "Interface with clients via Slack, Zoom, and email."],
+        "industry": "software",
+        "function": "software development",
+        "roles": "software",
+        "skills": "react native"
+    }
+]
