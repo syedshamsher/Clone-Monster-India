@@ -1,15 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import JobSearch from './Pages/JobSearch/JobSearch';
-import JobSearchFirst from './Pages/JobSearchFirst/JobSearchFirst';
-
+import React from 'react'
+import Routes from './Routes/Routes'
 
 function App() {
   return (
-    <div >
-      < JobSearchFirst/>
-    </div>
-  );
+    <div>
+      <Routes />
+  )
 }
 
-export default App;
+export default App
