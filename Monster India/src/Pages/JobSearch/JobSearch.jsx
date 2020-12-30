@@ -15,6 +15,7 @@ const JobSearch = () => {
     const dispatch = useDispatch()
     
     React.useEffect(() => {
+        dispatch( getJobData() )
         if(location === ""){
             setLocationSuggestion("")
         }
@@ -26,7 +27,7 @@ const JobSearch = () => {
 
     }, [location])
 
-    console.log(JSON.stringify(data))
+    console.log(data)
     return (
         <div style = {{marginTop: 100, padding: 20, marginLeft: 100}} >
             <input 
