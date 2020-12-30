@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import JobSearch from './Pages/JobSearch/JobSearch';
-import {MainPageSearch} from "./Components/MainPageSearch"
+import {MainPageSearch} from "./Components/MainPageSearch/MainPageSearch"
 
 function App() {
   return (

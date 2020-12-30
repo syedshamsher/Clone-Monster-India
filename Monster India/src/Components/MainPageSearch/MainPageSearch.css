@@ -24,7 +24,6 @@
 .middle {
     /* box-sizing: border-box; */
     /* width: 100%; */
-    border: 1px solid red;
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -116,7 +115,6 @@
 }
 
 .inside_div{
-    border:1px solid red;
     background-color: white;
     /* padding: 15px */
 }
