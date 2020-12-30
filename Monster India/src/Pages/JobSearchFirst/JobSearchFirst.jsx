@@ -3,6 +3,7 @@ import data from './data.json'
 import styled from 'styled-components'
 import { sendData } from '../../Redux/JobSearchFirst/action'
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 const SuggestionBox = styled.div`
     & * {
@@ -32,6 +33,7 @@ const JobSearchFirst = () => {
     const [role, setRoles] = React.useState("")
     const [active, setActive] = React.useState(0)
     const dispatch = useDispatch()
+    const history = useHistory()
     
     React.useEffect(() => {
         if(location === ""){
@@ -65,6 +67,7 @@ const JobSearchFirst = () => {
 
     const handleClick = () => {
         dispatch(sendData(keyword, experience, location, industry, functions, role))
+        history.push("/jobsearch")
     }
 
     console.log(keywordSuggestion)
