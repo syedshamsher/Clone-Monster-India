@@ -8,8 +8,8 @@ function OptionHeader({ label, handleClick, open }) {
       <div>{label}</div>
       {
         !open ? 
-        <div className={styles.plus} onClick={handleClick}>+</div> :
-        <div className={styles.minus} onClick={handleClick}>-</div> 
+        <div className={styles.plus} onClick={handleClick} >+</div> :
+        <div className={styles.minus} onClick={handleClick} >-</div> 
       }
 
     </div>

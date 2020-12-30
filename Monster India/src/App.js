@@ -1,11 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import JobSearch from './Pages/JobSearch/JobSearch';
+// import { Sidebar } from './Components/FilterOption/Sidebar/Sidebar';
+import { JobCard } from './Components/JobCard/JobCard';
+// import JobSearch from './Pages/JobSearch/JobSearch';
 
 function App() {
   return (
-    <div style = {{backgroundColor: "lightgray", margin: "none"}} >
-      <JobSearch />
+    <div >
+      {/* <JobSearch /> */}
+      <JobCard/>
+      {/* <Sidebar /> */}
     </div>
   );
 }

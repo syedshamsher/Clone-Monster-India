@@ -9,7 +9,7 @@ export const JobSearchReducer = ( state = initState, { type, payload } ) => {
         case GET_JOB_SUCCESS:
             return {
                 ...state,
-                jobs: payload
+                jobs: [...payload]
             }
         // case actionConstants.POST_TODO_SUCCESS:
         //     return {
