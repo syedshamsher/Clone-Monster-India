@@ -51,9 +51,13 @@ export default function NavBar() {
 
   let history = useHistory()
 
+  const handleLandingPage = () => {
+    history.push('/landingpage')
+  }
+
   const handleJobSearch = (event) => {
     // setJobSearch(event.currentTarget);
-    history.push('/jobsearch')
+    history.push('/jobsearchfirst')
   };
 
   const handleJobSearchClose = () => {
@@ -105,7 +109,7 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="sticky" color="default">
+      <AppBar position="sticky" color= "white">
         <Toolbar>
           <Hidden smUp>
         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -139,6 +143,7 @@ export default function NavBar() {
           sm={12}
           md={3}
           src={monsterlogo} 
+          onClick = {handleLandingPage}
           alt="Kitty Katty!" 
           className={classes.logo} 
           />
