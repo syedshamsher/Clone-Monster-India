@@ -1,16 +1,12 @@
-import './App.css';
-// import { Sidebar } from './Components/FilterOption/Sidebar/Sidebar';
-import { JobCard } from './Components/JobCard/JobCard';
-// import JobSearch from './Pages/JobSearch/JobSearch';
+import React from 'react'
+import Routes from './Routes/Routes'
 
 function App() {
   return (
-    <div >
-      {/* <JobSearch /> */}
-      <JobCard/>
-      {/* <Sidebar /> */}
+    <div>
+      <Routes />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
