@@ -4,6 +4,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import styles from '../style.module.css';
 
 export function Footer({jobs}) {
+    // console.log( jobs )
     return (
         <div className={styles.footerWrapper}>
             <div className={styles.left}>
