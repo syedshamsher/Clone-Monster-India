@@ -8,10 +8,10 @@ export const SearchContainerHeaderLinks = () => {
     return (
         <>
         <div className = "first-word">All Jobs</div>
-        <Badge color = "secondary" badgeContent={"new"} > {<div>Work From Home</div>} </Badge>
-        <button>covid-19 Resources</button>
-        <div>Contract Jobs</div>
-        <div>Fresher Jobs</div>
+        <Badge style ={{marginTop: 10}} color = "secondary" badgeContent={"new"} > {<div style ={{color: "white"}}>Work From Home</div>} </Badge>
+        <button>Covid-19 Resources</button>
+        <div style ={{marginTop: 10}} >Contract Jobs</div>
+        <div style ={{marginTop: 10}} >Fresher Jobs</div>
             
         </>
     )

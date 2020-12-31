@@ -9,8 +9,7 @@ import { Button } from '@material-ui/core';
 export const MainPageSearchBarContainer = () => {
     return (
         <div className = "main_search">
-        
-            <h1 className = "heading">100,000+ Jobs. Find Better. Faster</h1>
+            <p className = "heading">100,000+ Jobs. Find Better. Faster</p>
             <div className ="middle">
                 <div className = "all_jobs">
                     <div className = "top">
@@ -20,7 +19,7 @@ export const MainPageSearchBarContainer = () => {
                         <SearchBarContainer/>
                     </div>
                     <div className = "advanced_search">
-                        <h4 > Advanced Search</h4>
+                        <p > Advanced Search</p>
                     </div>
                     <div className = "bottom">
                         <JobLinks/>
@@ -29,35 +28,34 @@ export const MainPageSearchBarContainer = () => {
                 <div className = "profile_box">
                    <div className ="inside_div">
                        <div className = "user_details">
-                           <div>
-                           <h5> Anusha </h5>
+                           <div style = {{alignItems: "left"}}>
+                           <h4> Anusha </h4>
                            </div>
-                           <div>
-                                <span>74%</span>
-                                <p>profile score</p>
-
+                           <div style = {{marginLeft: 250}} >
+                                <p style = {{marginLeft: 40, color: "green", fontWeight: 700, fontSize: 18}} >74%</p>
+                                <p style= {{fontSize: 14}} >Profile Score</p>
                            </div>
                            
                         </div>
                        <div className = "recommended_jobs">
-                            <div>100</div>
-                            <p>Recommended jobs for you</p>
-                            <a href = "">view jobs</a>
+                            <div style= {{padding: 2, color: "white"}} >100</div>
+                            <p style = {{marginRight: 50}} >Recommended jobs for you</p>
+                            <a style ={{marginTop: 5}} href = ""><h5>View Jobs</h5> </a>
                        </div>
                        <div className = "alerts">
                             <div className = "pending_actions">
                                 <div className = "pending_num">
-                                    <div> 30 </div>
-                                    <p>pending actions</p>
+                                    <div style= {{padding: 2, color: "white", marginRight: 10}}> 30 </div>
+                                    <p>Pending Actions</p>
 
                                 </div>
                                 
-                                <Button color = "primary" variant = "outlined">update profile </Button>
+                                <button  style = {{color: "#5D50A6", background: "white", border: "1px solid #5D50A6", height: 45, width: 120, borderRadius: 5, fontSize: 15, marginTop: 30}}>Update Profile </button>
                             </div>
                             <div className = "job_alerts">
-                                <h3> job alerts </h3>
-                                <div>update job alerts based on various criteria</div>
-                                <Button color ="primary" variant = "contained">create Alert</Button>
+                                <h3> Job Alerts </h3>
+                                <div style = {{fontSize: 14}} >Update Job Alerts Based on various criteria</div>
+                                <button style = {{color: "white", background: "#5D50A6", height: 45, width: 120, borderRadius: 5, fontSize: 15}} >Create Alert</button>
 
                             </div>
 
@@ -68,11 +66,7 @@ export const MainPageSearchBarContainer = () => {
 
             </div>
             
-        
+            
         </div>
-       
-        
-    
-    
     )
 }
