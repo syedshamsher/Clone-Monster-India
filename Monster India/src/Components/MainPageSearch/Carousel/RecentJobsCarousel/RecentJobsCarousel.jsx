@@ -5,6 +5,8 @@ import Carousel from 'react-elastic-carousel';
 import {Header } from "../Header"
 import {getJobData} from "../../../../Redux/JobSearch/action"
 import {RecentJobCarouselItem} from "./RecentJobCarouselItem"
+import {ViewAllTag} from "../ViewAllTag"
+
 
 export const RecentJobsCarousel = ({breakPoints}) => {
     const jobData = useSelector((state) => state.jobs.jobs);
@@ -21,7 +23,13 @@ export const RecentJobsCarousel = ({breakPoints}) => {
     return (
         <div className= {styles.carousel_wrapper}>
             
-            <Header heading = "Recent Jobs"/>
+           
+            <div className = {styles.header} >
+                <Header heading = "Recent Jobs"/>
+                <ViewAllTag/>
+               
+
+            </div>
             
             <Carousel breakPoints={breakPoints}>{
                     jobData?.map( (item) => {

@@ -5,6 +5,7 @@ import { CarouselItem } from "./CarouselItem";
 import styles from "./Carousel.module.css";
 import Carousel from 'react-elastic-carousel';
 import {Header } from "./Header"
+import { ViewAllTag } from "./ViewAllTag";
 export const CarouselContainer = ({breakPoints}) => {
     const jobData = useSelector((state) => state.jobs.jobs);
     const dispatch = useDispatch();
@@ -25,12 +26,14 @@ export const CarouselContainer = ({breakPoints}) => {
     return (
         <div className= {styles.carousel_wrapper}>
             
-            <Header heading = "work from home jobs"/>
-            {/* <div className = {styles.header} >
-                <div className = {styles.title}>Work From Home Jobs</div> 
-                <a>view all</a>
+            
+            <div className = {styles.header} >
+                {/* <div className = {styles.title}>Work From Home Jobs</div>  */}
+                <Header heading = "work from home jobs"/>
+                <ViewAllTag/>
+               
 
-            </div> */}
+            </div>
             {/* <div className = {styles.mainContainer}></div> */}
 
             <Carousel breakPoints={breakPoints}>{

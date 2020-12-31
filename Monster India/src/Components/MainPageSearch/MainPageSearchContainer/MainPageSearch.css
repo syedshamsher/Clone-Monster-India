@@ -1,9 +1,9 @@
 * {
     margin: 0;
 }
-.wrapper {
-    /* padding-left: 120px; */
-}
+/* .wrapper {
+    padding-left: 120px;
+} */
 
 .main_search {
     width: 100%;
@@ -199,4 +199,13 @@
 }
 .job_alerts button{
     margin-bottom: 10px;
+}
+
+.middle_wrapper{
+    
+    border:1px solid black;
+    width:900px;
+    margin-top: 30px;
+    padding:20px;
+    margin-bottom: 50px
 }

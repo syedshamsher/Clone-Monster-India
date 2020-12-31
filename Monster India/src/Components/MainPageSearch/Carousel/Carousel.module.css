@@ -25,10 +25,10 @@
     
 
 }
-.header .title{
+.title{
     font-size: 20px;;
     flex-grow: 1;
-    color:black;
+    font-weight: 900;
 }
 .header a{
     color: blue;

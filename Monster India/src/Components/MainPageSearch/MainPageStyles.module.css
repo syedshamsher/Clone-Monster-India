@@ -1,0 +1,35 @@
+ 
+
+.vacancy_job_container{
+    /* background-color: green; */
+}
+.job_vacancy_header_links {
+    width: 820px;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.job_vacancy_header_links div{
+    font-weight:  bold;
+}
+.job_vacancy_header_links div:hover{
+    border-bottom: 2px solid blue;
+    cursor: pointer;
+}
+
+.skills_links_grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-gap:10px;
+    padding-left:20px
+}
+
+.right_child{
+    text-align: right;
+    color: blue;
+    margin-top:10px
+}
