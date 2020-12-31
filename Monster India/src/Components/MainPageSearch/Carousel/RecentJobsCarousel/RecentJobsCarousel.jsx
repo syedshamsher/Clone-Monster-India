@@ -6,18 +6,22 @@ import {Header } from "../Header"
 import {getJobData} from "../../../../Redux/JobSearch/action"
 import {RecentJobCarouselItem} from "./RecentJobCarouselItem"
 import {ViewAllTag} from "../ViewAllTag"
+import { useHistory } from "react-router-dom";
 
 
 export const RecentJobsCarousel = ({breakPoints}) => {
     const jobData = useSelector((state) => state.jobs.jobs);
     const dispatch = useDispatch();
-
+  const history = useHistory()
    
 
     React.useEffect(() => {
         dispatch(getJobData());
     }, []);
 
+    const goToJobDetails = (id) =>{
+        history.push( `/job-details/${id}` )
+    }
    
     
     return (
@@ -34,7 +38,7 @@ export const RecentJobsCarousel = ({breakPoints}) => {
             <Carousel breakPoints={breakPoints}>{
                     jobData?.map( (item) => {
                         return(
-                            <div  className = {styles.mainContainer}>
+                            <div  className = {styles.mainContainer} onClick = {() => goToJobDetails(item.job_id)}>
                                 {
                                     <RecentJobCarouselItem data = {item} />
                                 }
