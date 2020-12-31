@@ -1,0 +1,53 @@
+.cardContainer{
+    border:1px solid grey;
+    background-color: grey;
+    width:150px;
+}
+
+
+.carousel_wrapper{
+    
+    border:1px solid black;
+    background-color: white;
+    width:900px;
+    margin-top: 30px;
+    padding:20px;
+
+    margin-bottom: 50px;
+}
+
+.header{
+    width: 100%;
+    /* border:1px solid black; */
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    
+
+}
+.title{
+    font-size: 20px;;
+    flex-grow: 1;
+    font-weight: 900;
+}
+.header a{
+    color: blue;
+}
+.header a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.mainContainer{
+    align-items: center;
+    padding: 15px;
+    height: 130px;
+    width: 100%;
+    background-color:whitesmoke;
+    border:1px solid grey;
+    color: black;
+    margin: 0 15px;
+    box-sizing: border-box;
+    
+
+}
