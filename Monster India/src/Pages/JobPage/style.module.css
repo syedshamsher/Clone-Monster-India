@@ -1,0 +1,97 @@
+.wrapper {
+  width: 1200px;
+  background-color: #EBEBEB;
+}
+
+.main {
+  margin: 50px;
+  width: 700px;
+  background-color: #FFFFFF;
+}
+
+.firstbox>div{
+display: flex;
+margin: 50px;
+width: 700px;
+background-color: #FFFFFF;
+}
+
+
+.profileName {
+  margin: 10px;
+  padding-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.companyName {
+  margin: 10px;
+  margin-top: -10px;
+  font-size: 15px;
+  font-weight: 600;
+  color:  #6C54DA;
+}
+
+.locExpSal {
+  display: flex;
+}
+
+.locExpSalChild {
+  display: flex;
+  margin: 10px;
+  margin-top: -5px;
+}
+
+.locExpSalChild > div {
+  margin-left: 10px;
+}
+
+.footerWrapper {
+  background-color: #EBEBEB;
+  display: flex;
+  width: 650px;
+  height: 50px;
+  justify-content: space-between;
+}
+
+.left {
+  margin: 10px;
+}
+.right {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.right > button {
+  margin-left: 10px;
+  border: 2px solid #6C54DA
+}
+
+.right > button:hover {
+  background-color: #6C54DA;
+  color: white;
+}
+
+.cardDiv {
+  margin: 10px;
+}
+
+span {
+  color: #9A9995
+}
+
+.description { 
+  margin: 10px;
+  margin-top: -10px
+}
+
+.skills {
+  margin-left: 10px;
+}
+
+.applyBtn {
+background-color: #6C54DA;
+padding: 5px 15px;
+color: #F5F5F5
+}
