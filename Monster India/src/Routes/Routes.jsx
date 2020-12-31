@@ -5,11 +5,13 @@ import WorkFromHome from '../Pages/WorkFromHome/WorkFromHome'
 import CareerTips from '../Pages/CareerTips/CareerTips'
 import ResumeServices from '../Pages/RsumeServices/ResumeServices'
 import Navbar from '../Components/Navbar/NavBar'
+import { MainPageSearch } from '../Components/MainPageSearch/MainPageSearch';
 
 function Routes(){
 return (
   <div>
     <Route path="/" component={Navbar} />
+    <Route path="/" exact component={MainPageSearch} />
     <Switch>
     <Route path="/jobsearch" exact component={JobSearch} />
     <Route path="/workfromhome" component={WorkFromHome} />
