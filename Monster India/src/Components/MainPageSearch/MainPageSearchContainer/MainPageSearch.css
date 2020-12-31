@@ -1,15 +1,12 @@
 * {
     margin: 0;
 }
-/* .wrapper {
-    padding-left: 120px;
-} */
 
 .main_search {
     width: 100%;
-    height: 450px;
+    height: 500px;
     box-sizing: border-box;
-    padding-left: 120px;
+    padding-left: 60px;
     background: linear-gradient(
         0.25turn,
         rgb(124, 118, 118, 0.5),
@@ -20,8 +17,11 @@
 }
 
 .heading {
-    padding-top: 10px;
+    padding-top: 20px;
     color: white;
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 35px;
 }
 
 .middle {
@@ -34,30 +34,31 @@
 .all_jobs {
     /* width: 100%; */
     box-sizing: border-box;
-    width: 692px;
-    height: 246px;
-    background-color: rgb(39, 41, 49, 0.5);
+    width: 750px;
+    height: 280px;
+    /* background-color: rgb(39, 41, 49, 0.5); */
     margin-right: 35px;
-    padding: 20px;
+    padding: 30px;
+    background-color: #25282F;  
     
 }
-
-
-
 
 .top {
     display: flex;
     justify-content: space-around;
     color: white;
+    margin-bottom: 20px;
 }
 .top button {
-    background-color: red;
+    background-color: #DF7065;
     color: white;
     border:none;
-    padding: 7px;
+    font-size: 16px;
+    padding: 10px;
 }
 .first-word {
     border-bottom: 2px solid white;
+    margin-top: 10px;
 }
 
 .top div:hover, .bottom a:hover {
@@ -73,8 +74,10 @@
 }
 
 .search_icon{
-    height: 30px;
-     margin-right: 5px;
+    height: 20px;
+    margin-top: 12px;
+    margin-left: 10px;
+    margin-right: 5px;
     /* margin-top:4px; */ 
 }
 
@@ -82,10 +85,12 @@
 .inputbox{
     border:none;
     outline: none;
-    flex-grow:1
+    flex-grow:1;
+    height: 40px;
 }
 .voice_search_icon{
     height: 35px;
+    margin-top: 3px;
 }
 
 .advanced_search{
@@ -93,6 +98,7 @@
     margin-top:10px;
     color: white;
     text-align: right;
+    font-size: 14px;
      
 }
 
@@ -102,7 +108,8 @@
     box-sizing: border-box;
 }
 .bottom{
-    margin-top:20px
+    margin-top:20px;
+    text-align: left;
 }
 
 .bottom p, .bottom a{
@@ -112,13 +119,16 @@
 .profile_box {
 
     width: 470px;
-    height: 324px;
-    background-color: rgb(39, 41, 49, 0.5);
+    height: 350px;
+    /* background-color: rgb(39, 41, 49, 0.5); */
+    background-color: #25282F;  
     padding: 25px;
 }
 
 .inside_div{
     background-color: white;
+    height: 280px;
+    padding: 10px;
     /* padding: 15px */
 }
 
@@ -126,15 +136,14 @@
 .user_details{
     height:70px;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
    
 }
 
 .recommended_jobs{
     background-color: rgb(245,245,245);  
     display: flex;
-    padding: 15px;
+    padding: 10px;
+    padding-bottom: 20px;
     
 }
 .recommended_jobs div{
@@ -160,7 +169,7 @@
 
 .alerts{
     display: flex;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .pending_num div{
@@ -191,7 +200,9 @@
 }
 
 .job_alerts *{
-    margin:5px
+    margin:5px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 .job_alerts div{
     max-width: 170px;
