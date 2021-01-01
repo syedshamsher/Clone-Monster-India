@@ -31,10 +31,10 @@ export const WalkInJobCarousel = ({breakPoints}) => {
                 <ViewAllTag/>
             </div>
             
-            <Carousel breakPoints={breakPoints}>{
+            <Carousel breakPoints={breakPoints} pagination = {false}>{
                     jobData?.map( (item) => {
                         return(
-                            <div  className = {styles.mainContainer} onClick = { () => goToJobDetails(item.job_id)}>
+                            <div  key = {item.job_id} className = {styles.mainContainer} onClick = { () => goToJobDetails(item.job_id)}>
                                 {
                                     <WalkInCarouselItem data = {item} />
                                 }

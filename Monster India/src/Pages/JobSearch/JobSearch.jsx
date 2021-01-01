@@ -19,6 +19,7 @@ const JobSearch = () => {
     const [keywordSuggestion, setKeywordSuggestion] = React.useState("")
     const [active, setActive] = React.useState(0)
     const [experience, setExperience] = React.useState("")
+    const history = useHistory()
 
     const SuggestionBox = styled.div`
     & * {
@@ -36,7 +37,6 @@ const JobSearch = () => {
         font-weight: bold
     }
     `
-
     React.useEffect(() => {
         dispatch(getJobData())
         if(location === ""){
@@ -54,27 +54,58 @@ const JobSearch = () => {
             setKeywordSuggestion(output2)
         }
     }, [keyword, location])
-
     const keywordClick = (key) => {
         setKeyword(key)
         setKeywordSuggestion("")
     }
-
     const locationClick = (key) => {
         setLocation(key)
         setLocationSuggestion("")
     }
-
     const handleClick = () => {
         dispatch(sendData(keyword, experience, location))
         window.location.reload()
     }
+    console.log(jobs)
+
 
     // console.log(jobs)
     return (
         <div className={styles.wrapper}>
                 <div className={styles.searchBarWrapper}>
                     {/*SearchBar*/}
+                    <input 
+                        value = {keyword} 
+                        onChange = {(e) => setKeyword(e.target.value)} 
+                        placeholder = "Keyword" 
+                        style = {{height: 35, width: 500, marginBottom: 20, border: "2px solid lightgrey", padding: 5, color: "darkgrey"}}
+                    />
+                    <SuggestionBox  id={styles.suggestBox} active = {active} >
+                    {
+                        keywordSuggestion && keywordSuggestion.map((item, index) => <div style = {{width: 500}}  onMouseOver = {() => setActive(index+1)} key = {item.job_id} onClick = {() => keywordClick(item.profile_name) } > {item.profile_name} </div>)
+                    }
+                    </SuggestionBox>
+                    <br />
+                    <select className={styles.expOpt}  value = {experience} onChange = {(e) => setExperience(e.target.value)} >
+                        <option selected disabled value = "" hidden > Experience </option>
+                        <option value = "0" > 0 </option>
+                        <option value = "1" > 1 </option>
+                        <option value = "2" > 2 </option>
+                        <option value = "3" > 3 </option>
+                        <option value = "4" > 4 </option>
+                        <option value = "5" > 5 </option>
+                        <option value = "6" > 6 </option>
+                        <option value = "7" > 7 </option>
+                        <option value = "8" > 8 </option>
+                        <option value = "9" > 9 </option>
+                        <option value = "10" > 10 </option>
+                    </select>
+                    <input className={styles.locationOpt} placeholder = "Location" style = {{width: 350, height: 32, border: "2px solid lightgrey", padding: 5,  color: "darkgrey"}} value= {location} onChange = {(e) => setLocation(e.target.value)} />
+                        <SuggestionBox id={styles.locSuggestBox} active = {active} >
+                        {
+                            locationSuggestion && locationSuggestion.map((item, index) => <div onMouseOver = {() => setActive(index+1)} key = {item.job_id} onClick = {() => locationClick(item.location)} > {item.location} </div>)
+                        }
+                        </SuggestionBox>
                     <div style = {{display:'flex', flexDirection:'column'}}>
                         <input 
                             value = {keyword} 
@@ -112,15 +143,11 @@ const JobSearch = () => {
                     <Sidebar />
                 </div>
                 <div className={styles.midBodyWrapper}>
-                    <div className={styles.pgnlimitDiv}>
-                    {/*pagination limit page items*/}
-                    </div>
+                    
                     <div>
                         <FilteredJob/>
                     </div>
-                    <div>
-                        {/*pagination next previous button*/}
-                    </div>
+                   
                 </div>
                 <div className={styles.addsWrapper}>
                     {/*Adds*/}
@@ -138,5 +165,4 @@ const JobSearch = () => {
          </div>
     )
 }
-
 export default JobSearch

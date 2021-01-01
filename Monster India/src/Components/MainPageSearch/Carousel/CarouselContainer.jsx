@@ -27,12 +27,12 @@ export const CarouselContainer = ({ breakPoints }) => {
                 <ViewAllTag />
             </div>
 
-            <Carousel breakPoints={breakPoints}>
+            <Carousel breakPoints={breakPoints} pagination = {false}>
                 {jobData
-                    ?.filter((item) => item.job_type == "Work From Home")
+                    ?.filter((item) => item.job_type.toLowerCase() == "work from home")
                     .map((item) => {
                         return (
-                            <div style = {{border: "1px solid grey"}}
+                            <div key = {item.job_id} style = {{border: "1px solid grey"}}
                                 className={styles.mainContainer}
                                 onClick={() => goToJobDetails(item.job_id)}
                             >
