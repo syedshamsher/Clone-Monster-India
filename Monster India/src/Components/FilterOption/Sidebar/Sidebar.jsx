@@ -5,28 +5,22 @@ import styles from '../style.module.css';
 import { useDispatch, useSelector } from 'react-redux'
 import { getFilteredJobData } from '../../../Redux/FilteredJobs/action'
 import { getJobData } from '../../../Redux/JobSearch/action'
-import { Card } from '../../JobCard/Card';
-import { Footer } from '../../JobCard/Footer';
 import { useHistory } from "react-router-dom";
-import { FilteredJob } from '../../FilteredJob';
 
 export function Sidebar() {
     const filteredJobs = useSelector(state => state.filteredJobs)
     const searchedVal = useSelector(state => state.jobsFirst)
-    // console.log( filteredJobs )
-    // console.log( "searched value" ,searchedVal )
-    let profileQuery = { key: "profile_name", value: searchedVal.keyword }
     var initialQuery = []
     for( var k in searchedVal ) {
-        // console.log( "obj----",k, searchedVal[k] )
-        if( k === "keyword" && searchedVal[k] !== "" ) {
+        console.log( "obj----",k, searchedVal[k] )
+        if( k === "keyword" && searchedVal[k] !== "" && searchedVal[k] !== undefined )  {
             initialQuery.push({ key: "profile_name", value: searchedVal[k] })
         }
-        else if( k !== "keyword" && searchedVal[k] !== "" ) {
+        else if( k !== "keyword" && searchedVal[k] !== "" && searchedVal[k] !== undefined ) {
             initialQuery.push({ key: k, value: searchedVal[k] })
         }
     }
-    console.log( initialQuery )
+    console.log( 'init-q---',initialQuery )
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -38,7 +32,7 @@ export function Sidebar() {
     const [openQualificationOpt, setOpenQualificationOpt] = React.useState(false);
     const [openIndustryOpt, setOpenIndustryOpt] = React.useState(false);
     const [openJobTypeOpt, setOpenJobTypeOpt] = React.useState(false);
-    const [params, setParams] = React.useState([profileQuery]);
+    const [params, setParams] = React.useState([...initialQuery]);
     
     const handleChange = (e) => {
         let check = e.target.checked;
@@ -66,7 +60,6 @@ export function Sidebar() {
                 urlParams += params[i].key+ "=" + params[i].value + "&"
             }
         }
-        console.log(urlParams)
         history.push(`/jobsearch/?${urlParams}`)
     }, [params]);
     
@@ -74,14 +67,6 @@ export function Sidebar() {
         dispatch(getJobData());
     }, [])
 
-    const goToJobDetails = (id) =>{
-        history.push( `/job-details/${id}` )
-    }
-
-    // const handleClick = () => {
-    //     dispatch( getFilteredJobData(params) )
-    // }
-    
     const handleFunctionOpt = () => {
         openFunctionOpt ? setOpenFunctionOpt(false) : setOpenFunctionOpt(true);
     };

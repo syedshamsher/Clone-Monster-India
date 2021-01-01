@@ -42,20 +42,6 @@ return (
   </div>
 );
 
-    {/* <Route path="/jobsearch-filter" exact component={Sidebar} /> */}
-    <Route path = "/job-details/:id" render = { (props) => <JobDetails {...props}/> }   />
-    <Route path="/landingpage" exact component={LandingPage} />
-    <Route path="/jobsearchfirst" exact component={JobSearchFirst} />
-    <Route path="/jobsearch" exact component={JobSearch} />
-    <Route path="/workfromhome" component={WorkFromHome} />
-    <Route path="/careertips" component={CareerTips} />
-    <Route path="/resumeservices" component={ResumeServices} /> 
-    <Route path="/applied/:id" component={Applied} /> 
-
-    </Switch>    
-</div>
-)
-
 }
 
 export default Routes
