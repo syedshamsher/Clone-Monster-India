@@ -1,0 +1,66 @@
+.wrapper {
+    
+}
+
+.main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sidebarWrapper {
+    margin-top: 20px ;
+}
+
+.midBodyWrapper {
+    margin-top: 20px;
+}
+
+.addsWrapper {
+    width: 200px;
+    height: 700px;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.pgnlimitDiv {
+    background-color:white;
+    width: 700px;
+    height: 60px;
+}
+
+.firstAdd {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding-top: 10px;
+    background-color: #FFEDF5;
+}
+
+.firstAdd > img{
+    width:150px;
+    color: #FFEDF5;
+}
+
+.firstAdd > h1{
+    font-size: 30px;
+    line-height: 30px;
+    margin: 10px;
+}
+
+.firstAdd > h4 {
+    margin: 10px;
+}
+
+.firstAdd > button {
+    width: 100px;
+    height: 30px;
+    background-color: var(--monster-color);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
