@@ -11,7 +11,22 @@ import { useHistory } from "react-router-dom";
 
 export function Sidebar() {
     const filteredJobs = useSelector(state => state.filteredJobs)
-    console.log( filteredJobs )
+    const searchedVal = useSelector(state => state.jobsFirst)
+    // console.log( filteredJobs )
+    // console.log( "searched value" ,searchedVal )
+    let profileQuery = { key: "profile_name", value: searchedVal.keyword }
+    var initialQuery = []
+    for( var k in searchedVal ) {
+        // console.log( "obj----",k, searchedVal[k] )
+        if( k === "keyword" && searchedVal[k] !== "" ) {
+            initialQuery.push({ key: "profile_name", value: searchedVal[k] })
+        }
+        else if( k !== "keyword" && searchedVal[k] !== "" ) {
+            initialQuery.push({ key: k, value: searchedVal[k] })
+        }
+    }
+    console.log( initialQuery )
+
     const dispatch = useDispatch()
     const history = useHistory()
     const [openFunctionOpt, setOpenFunctionOpt] = React.useState(false);
@@ -22,9 +37,8 @@ export function Sidebar() {
     const [openQualificationOpt, setOpenQualificationOpt] = React.useState(false);
     const [openIndustryOpt, setOpenIndustryOpt] = React.useState(false);
     const [openJobTypeOpt, setOpenJobTypeOpt] = React.useState(false);
-    const [params, setParams] = React.useState([]);
-    const [found, setFound] = React.useState([]);
-   
+    const [params, setParams] = React.useState([profileQuery]);
+    
     const handleChange = (e) => {
         let check = e.target.checked;
         var k = e.target.name
@@ -41,9 +55,23 @@ export function Sidebar() {
     }
 
     React.useEffect(() => {
-        dispatch(getJobData());
+    // console.log( params )
         dispatch(getFilteredJobData(params))
-    }, []);
+        var urlParams = ``
+        for( let i = 0; i < params.length; i++ ) {
+            if( i === params.length - 1) {
+                urlParams += params[i].key+ "=" + params[i].value
+            } else {
+                urlParams += params[i].key+ "=" + params[i].value + "&"
+            }
+        }
+        console.log(urlParams)
+        history.push(`/jobsearch/?${urlParams}`)
+    }, [params]);
+    
+    React.useEffect(() => {
+        dispatch(getJobData());
+    }, [])
 
     const goToJobDetails = (id) =>{
         history.push( `/job-details/${id}` )
@@ -210,8 +238,10 @@ export function Sidebar() {
 
                         filteredJobs.jobs?.map((item) => {
                             return (
-                                <div onClick={() => goToJobDetails(item.job_id)} key={item.job_id}>
-                                    <Card jobs={item}/>
+                                <div key={item.job_id}>
+                                    <div onClick={() => goToJobDetails(item.job_id)}>
+                                      <Card jobs={item}/>
+                                    </div>
                                     <Footer jobs={item}/>
                                 </div>
                             )

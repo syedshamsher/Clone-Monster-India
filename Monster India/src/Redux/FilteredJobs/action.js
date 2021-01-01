@@ -21,6 +21,13 @@ export const getFilteredJobFailure = ( payload ) => {
     }
 }
 
+ const profileQueryParams = (params) => {
+        var profileQueryArr = []
+        var p = params.map((item) => item.key === "profile_name" && profileQueryArr.push(item.value))
+        return profileQueryArr
+    }
+    
+
  const locationParams = (params) => {
         var locationArr = []
         var l = params.map((item) => item.key === "location" && locationArr.push(item.value))
@@ -80,6 +87,7 @@ export const getFilteredJobData = (params) => dispatch => {
     let qua = qualificationsParams(params)
     let ind = industryParams(params)
     let rol = roleParams(params)
+    let pro = profileQueryParams(params)
 
     dispatch( getFilteredJobRequest() )
     let config = {
@@ -94,6 +102,7 @@ export const getFilteredJobData = (params) => dispatch => {
             qualifications: qua,
             industry: ind,
             role: rol,
+            profile_name: pro
         },
         // paramsSerializer: params => {
         //     return qs.stringify(params)

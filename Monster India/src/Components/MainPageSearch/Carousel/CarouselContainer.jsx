@@ -10,9 +10,7 @@ import { useHistory } from "react-router-dom";
 export const CarouselContainer = ({ breakPoints }) => {
     const jobData = useSelector((state) => state.jobs.jobs);
     const dispatch = useDispatch();
-    const history = useHistory()
-
-    
+    const history = useHistory()    
 
     React.useEffect(() => {
         dispatch(getJobData());
@@ -31,7 +29,7 @@ export const CarouselContainer = ({ breakPoints }) => {
 
             <Carousel breakPoints={breakPoints}>
                 {jobData
-                    ?.filter((item) => item.job_type == "work from home")
+                    ?.filter((item) => item.job_type == "Work From Home")
                     .map((item) => {
                         return (
                             <div
