@@ -29,8 +29,6 @@ export const WalkInJobCarousel = ({breakPoints}) => {
             <div className = {styles.header} >
                 <Header heading = "WalkIn Jobs"/>
                 <ViewAllTag/>
-               
-
             </div>
             
             <Carousel breakPoints={breakPoints}>{
@@ -43,7 +41,7 @@ export const WalkInJobCarousel = ({breakPoints}) => {
                             </div>
                         )
                     })
-               }
+                }
                 
             </Carousel>
            

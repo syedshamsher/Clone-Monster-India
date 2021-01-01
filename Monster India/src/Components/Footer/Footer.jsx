@@ -1,27 +1,34 @@
 import React from "react";
-import JobSeekers from "./JobSeekers";
-import Employers from "./Employers";
-import Monster from "./Monster";
-import StayConnected from "./StayConnected";
-import Legal from "./Legal";
+// import JobSeekers from "./JobSeekers";
+// import Employers from "./Employers";
+// import Monster from "./Monster";
+// import StayConnected from "./StayConnected";
+// import Legal from "./Legal";
 import styled from "styled-components";
 
 const FooterStyles = styled.div`
-  background-color: #5d4da8;
+  background-color: #6C59D7;
   display: flex;
   flex-direction: row;
   color: white;
+  padding: 40px
 `;
 
 const FooterWrap = styled.div`
-  margin-left: 100px;
+  margin-left: 60px;
+   p{
+      margin-bottom: 15px
+   }
+    h3{
+      margin-bottom: 15px
+    }
 `;
 
 function Footer() {
   return (
     <FooterStyles>
       <FooterWrap>
-        <div>
+        <div style = {{textAlign: "left", marginRight: 30}} >
           <h3>Job Seekers</h3>
           <p>Job Search</p>
           <p>Job Seekers Login</p>
@@ -34,7 +41,7 @@ function Footer() {
         </div>
       </FooterWrap>
       <FooterWrap>
-        <div>
+        <div style = {{textAlign: "left", marginRight: 30}}>
           <h3>Employers</h3>
           <p>Employers Login</p>
           <p>Access Resume Database</p>
@@ -46,7 +53,7 @@ function Footer() {
         </div>
       </FooterWrap>
       <FooterWrap>
-        <div>
+        <div style = {{textAlign: "left", marginRight: 30}}> 
           <h3>Monster</h3>
           <p>About Us</p>
           <p>Career With Us</p>
@@ -58,7 +65,7 @@ function Footer() {
           <p>Jobs App</p>
         </div>
       </FooterWrap>
-      <FooterWrap>
+      <FooterWrap style = {{textAlign: "left", marginRight: 30}}>
         <div>
           <h3>Stay Connected</h3>
           <p>Facebook</p>
@@ -68,7 +75,7 @@ function Footer() {
           <p>Instagram</p>
         </div>
       </FooterWrap>
-      <FooterWrap>
+      <FooterWrap style = {{textAlign: "left", marginRight: 30}}>
         <div>
           <h3>Legal</h3>
           <p>Security & Fraud</p>

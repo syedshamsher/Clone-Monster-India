@@ -1,19 +1,20 @@
 .cardContainer{
-    border:1px solid grey;
     background-color: grey;
     width:150px;
 }
 
 
 .carousel_wrapper{
-    
-    border:1px solid black;
     background-color: white;
     width:900px;
     margin-top: 30px;
     padding:20px;
+    text-align: left;
+    margin-bottom: 20px;
+}
 
-    margin-bottom: 50px;
+.carousel_wrapper div{
+    text-align: left;
 }
 
 .header{
@@ -29,6 +30,7 @@
     font-size: 20px;;
     flex-grow: 1;
     font-weight: 900;
+    align-items: left;
 }
 .header a{
     color: blue;
@@ -44,7 +46,6 @@
     height: 130px;
     width: 100%;
     background-color:whitesmoke;
-    border:1px solid grey;
     color: black;
     margin: 0 15px;
     box-sizing: border-box;
