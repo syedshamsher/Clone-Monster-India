@@ -5,10 +5,13 @@ import Routes from './Routes/Routes'
 import {MainPageSearch} from "./Components/MainPageSearch/MainPageSearch"
 import './App.css';
 
+
+
 function App() {
   return (
     <div className = "App" >
       <Routes />
+      
     </div>
   )
 }

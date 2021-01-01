@@ -8,6 +8,9 @@ import { getJobData } from '../../../Redux/JobSearch/action'
 import { Card } from '../../JobCard/Card';
 import { Footer } from '../../JobCard/Footer';
 import { useHistory } from "react-router-dom";
+import {Pagination} from "../../Pagination/Pagination"
+import { SelectOption } from '../../Pagination/SelectOption';
+import { Button } from '@material-ui/core';
 
 export function Sidebar() {
     const filteredJobs = useSelector(state => state.filteredJobs)
@@ -24,6 +27,9 @@ export function Sidebar() {
     const [openJobTypeOpt, setOpenJobTypeOpt] = React.useState(false);
     const [params, setParams] = React.useState([]);
     const [found, setFound] = React.useState([]);
+    const [currentPage, setCurrentPage] = React.useState(1)
+    const [perPage, setPerPage] = React.useState(2)
+    
    
     const handleChange = (e) => {
         let check = e.target.checked;
@@ -85,6 +91,27 @@ export function Sidebar() {
         openJobTypeOpt ? setOpenJobTypeOpt(false) : setOpenJobTypeOpt(true);
     };
 
+    
+    const getItemsPerPage = (number) => {
+        setPerPage(number)
+        setCurrentPage(1)
+
+
+    }
+    const handleNext = () => {
+        setCurrentPage( prev => prev + 1)
+    }
+
+    const handlePrevious = () => {
+        console.log(currentPage, "curr page in handleprev")
+        setCurrentPage( prev => prev - 1 )
+    }
+
+    
+    const  totalPages = Math.ceil( filteredJobs.jobs.length/perPage );
+   
+
+    
     return (
         <div className={styles.wrapper}>
             <div>
@@ -200,15 +227,20 @@ export function Sidebar() {
                     <div className={styles.divider}></div>
                 </div>
             </div>
-            <div>
 
+            <div>
+            {filteredJobs.jobs.length > 0 && <div style = {{ display :"flex", alignItems:"center" }} >  
+                 <span> show: </span> <SelectOption onChange = {getItemsPerPage} value = {perPage}/> <span>perPage</span>
+                    
+                </div>}
                 {
                     filteredJobs.jobs.length === 0 ?
-
+ 
                     <div> No Matches </div> :
 
-
-                        filteredJobs.jobs?.map((item) => {
+                        filteredJobs.jobs?.filter( (_,index) => ( index >= (currentPage - 1)*perPage ) && ( index < (currentPage*perPage)  )  ).map((item) => {
+                             {console.log(currentPage, "currentPage")}
+                            
                             return (
                                 <div onClick={() => goToJobDetails(item.job_id)} key={item.job_id}>
                                     <Card jobs={item}/>
@@ -217,6 +249,27 @@ export function Sidebar() {
                             )
                         }) 
                 }
+
+                {
+                   currentPage <= 1 ? <button  style = {{ visibility: "hidden"}} onClick = {handlePrevious} >Previous</button>:
+                   <button 
+                     className = {styles.prevButton} 
+                     onClick = {handlePrevious} 
+                     color = "primary" 
+                     variant = "outlined">Previous</button>         
+                }
+                {
+                  filteredJobs.jobs && currentPage >= totalPages ? <button  style = {{ visibility: "hidden"}} onClick = {handleNext} >Next</button>:
+                   <button 
+                     className = {styles.nextButton} 
+                     onClick = {handleNext} >Next</button>
+                    
+                    
+                }
+                
+
+               
+
                 
             </div>
 

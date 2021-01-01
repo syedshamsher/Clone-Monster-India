@@ -5,7 +5,7 @@ import WorkFromHome from '../Pages/WorkFromHome/WorkFromHome'
 import CareerTips from '../Pages/CareerTips/CareerTips'
 import ResumeServices from '../Pages/RsumeServices/ResumeServices'
 import Navbar from '../Components/Navbar/NavBar'
-import { JobDetails } from '../Pages/JobDeatails/JobDetails';
+import { JobDetails } from '../Pages/JobDetails/JobDetails';
 import { Sidebar } from '../Components/FilterOption/Sidebar/Sidebar';
 import JobSearchFirst from '../Pages/JobSearchFirst/JobSearchFirst';
 import {MainPageSearch} from '../Components/MainPageSearch/MainPageSearch'

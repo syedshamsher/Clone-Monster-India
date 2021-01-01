@@ -31,7 +31,7 @@ export const CarouselContainer = ({ breakPoints }) => {
 
             <Carousel breakPoints={breakPoints}>
                 {jobData
-                    ?.filter((item) => item.job_type == "work from home")
+                    ?.filter((item) => item.job_type.toLowerCase() == "work from home" )
                     .map((item) => {
                         return (
                             <div
