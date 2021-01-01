@@ -5,11 +5,11 @@ import {Header} from "../Carousel/Header"
 
 export const JobVacancyContainer = () => {
     return (
-        <div style = {{background: "white", padding: 30}} >
-            <h2 style = {{textAlign: "left"}} > Find Job Vacancies by </h2>
+        <div >
+            <Header heading = "Find Job Vacancies By" />
             <div className = {styles.job_vacancy_wrapper}>
                 <div className = {styles.job_vacancy_header_links} >
-                <button style = {{color: "white", background: "#5D50A6", height: 45, width: 120, borderRadius: 5, fontSize: 15}} > Skills</button>
+                    <Button color = "primary" variant = "contained">skills</Button>
                     <div>Location</div>
                     <div>Industry</div>
                     <div>Functions</div>
@@ -18,7 +18,7 @@ export const JobVacancyContainer = () => {
 
                 </div>
 
-                <div className = {styles.skills_links_grid} style= {{textAlign: "left", marginLeft: 16, marginTop: 50}} >
+                <div className = {styles.skills_links_grid}>
                         <div>Software Engineering</div>
                         <div>Bfsi</div>
                         <div>Banking</div>
@@ -32,7 +32,7 @@ export const JobVacancyContainer = () => {
                         <div>agency</div>
                         <div>Bank Office</div>
                 </div>
-                <div style = {{marginTop: 30, color: "#5D50A6"}} className = {styles.right_child} > Browse all jobs by skills</div>
+                <div className = {styles.right_child} > browse all jobs by skills</div>
             </div>
             
         </div>

@@ -170,7 +170,7 @@ export default function NavBar() {
                 label="Job Search"
                 onClick={handleJobSearch}
                 className={classes.tab}
-                // onMouseOver={handleJobDropDown}
+                onMouseOver={handleJobDropDown}
               />
             </Hidden>
 

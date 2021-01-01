@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import { sendData } from '../../Redux/JobSearchFirst/action'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import Footer from '../../Components/Footer/Footer'
-
 
 const SuggestionBox = styled.div`
     & * {
@@ -74,9 +72,7 @@ const JobSearchFirst = () => {
 
     console.log(keywordSuggestion)
     return (
-        <div>
-            <h2 style = {{marginLeft: -980, marginTop: 50}} >Advance Job Search</h2>
-            <div style = {{margin: "20px 560px 200px 100px", padding: 20, background: "white"}} >
+        <div style = {{margin: "100px 560px 0px 100px", padding: 20, background: "white"}} >
             <input 
                 value = {keyword} 
                 onChange = {(e) => setKeyword(e.target.value)} 
@@ -137,11 +133,8 @@ const JobSearchFirst = () => {
                 <option value = "assistant" > Assistant </option>
                 <option value = "marketing manager" > Marketing Manager </option>
             </select>
-            <button onClick= {handleClick} style = {{width: 716, height: 50, padding: 10, marginLeft: "auto", background: "#6C59D7", color: "white", fontSize: 16, fontWeight: 700}} >Search</button>
+            <button onClick= {handleClick} style = {{width: 716, height: 50, padding: 10, marginLeft: "auto", background: "#6C59D7", color: "white"}} >Search</button>
         </div>
-        <Footer />
-        </div>
-        
     )
 }
 
