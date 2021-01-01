@@ -1,8 +1,3 @@
- 
-
-.vacancy_job_container{
-    /* background-color: green; */
-}
 .job_vacancy_header_links {
     width: 820px;
     display:flex;
@@ -24,12 +19,13 @@
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
-    grid-gap:10px;
+    grid-gap:20px;
     padding-left:20px
 }
 
 .right_child{
     text-align: right;
     color: blue;
-    margin-top:10px
+    margin-top:30px
+
 }

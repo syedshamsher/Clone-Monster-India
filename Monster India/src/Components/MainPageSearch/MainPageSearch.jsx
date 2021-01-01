@@ -5,6 +5,7 @@ import "./MainPageSearchContainer/MainPageSearch.css"
 import {WalkInJobCarousel} from "./Carousel/WalkInJobCarousel/WalkInJobCarousel"
 import { RecentJobsCarousel } from './Carousel/RecentJobsCarousel/RecentJobsCarousel'
 import {JobVacancyContainer} from  "./JobVacancyContainer"
+import Footer from '../Footer/Footer'
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -21,16 +22,13 @@ export const MainPageSearch = () => {
                 
                 <RecentJobsCarousel breakPoints = {breakPoints} />
                 <WalkInJobCarousel breakPoints = {breakPoints}/>
-                <div className = "middle_wrapper">
+                <div style = {{width: 940}}>
                   <JobVacancyContainer/>
 
                 </div>
-               
-
             </div>
-
-            
-            
+            <br /> <br />
+            <Footer />
         
         </div>
        
