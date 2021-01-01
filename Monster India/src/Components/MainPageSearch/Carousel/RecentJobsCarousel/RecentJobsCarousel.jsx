@@ -31,7 +31,6 @@ export const RecentJobsCarousel = ({breakPoints}) => {
             <div className = {styles.header} >
                 <Header heading = "Recent Jobs"/>
                 <ViewAllTag/>
-               
 
             </div>
             

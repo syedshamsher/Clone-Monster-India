@@ -14,12 +14,12 @@ const SuggestionBox = styled.div`
         padding: 5px;
         height: 20px;
         backgroundColor: white;
-        padding: 5px;
-        border: 0.5px solid lightgrey
+        padding: 8px;
+        border-bottom: 0.5px solid lightgrey
     }
     & :nth-child(${({active}) => active}){
-        background: lightgray;
-        color: white;
+        background: #F8F8F8;
+        color: #6C54DA;
         font-weight: bold
     }
 `
@@ -83,7 +83,7 @@ const JobSearchFirst = () => {
                 placeholder = "Keyword" 
                 style = {{height: 35, width: 700, marginBottom: 20, border: "2px solid lightgrey", padding: 5, color: "darkgrey"}}
             />
-            <SuggestionBox style = {{maxHeight: 130, overflow: "scroll", position: "absolute", marginTop: -20, width: 710, background: "white"}} active = {active} >
+            <SuggestionBox style = {{maxHeight: 130, overflow: "scroll", position: "absolute", textAlign: "left", marginTop: -20, width: 710, background: "white", marginLeft: 5}} active = {active} >
             {
                 keywordSuggestion && keywordSuggestion.map((item, index) => <div style = {{width: 710}} onMouseOver = {() => setActive(index+1)} key = {item.job_id} onClick = {() => keywordClick(item.profile_name) } > {item.profile_name} </div>)
             }

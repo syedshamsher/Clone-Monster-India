@@ -7,7 +7,6 @@ import styles from './style.module.css';
 
 export function JobCard() {
     const jobs = useSelector( state => state.jobs )
-    console.log( jobs.jobs )
     const dispatch = useDispatch()
 
     React.useEffect(() => {

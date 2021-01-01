@@ -5,13 +5,22 @@ import LocalAtmIcon from "@material-ui/icons/LocalAtm";
 import WorkIcon from "@material-ui/icons/Work";
 import ShareIcon from "@material-ui/icons/Share";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
+import Footer from "../../Components/Footer/Footer";
 
 function JobPage(props) {
   console.log( props.data )
   return (
-    <div className={styles.wrapper}>
+    <div>
+      <div>
+        <div style = {{fontSize: 30, color: "grey", marginLeft: -1000, marginTop: 50}} > About the Job in Detail </div>
+        {/* <div className={styles.right}>
+          <StarBorderIcon style={{ color: "#9B9B9B", height: 80 }} />
+          <ShareIcon style={{ color: "#9B9B9B", height: 80  }} />
+          <button className={styles.applyBtn}>Apply</button>
+        </div> */}
+      </div>
       <div className={styles.main}>
-        <div>
+        <div style = {{height: 120, width: 1000, marginBottom: 0}} >
           <div className={styles.profileName}>
             {props.data.profile_name}
           </div>
@@ -20,33 +29,27 @@ function JobPage(props) {
           </div>
           <div className={styles.locExpSal}>
             <div className={styles.locExpSalChild}>
-              <LocationOnIcon style={{ color: "#9B9B9B" }} />
+              <LocationOnIcon style={{ color: "#9B9B9B", height: 20 }} />
               <div>{props.data.location}</div>
             </div>
             <div className={styles.locExpSalChild}>
-              <WorkIcon style={{ color: "#9B9B9B" }} />
+              <WorkIcon style={{ color: "#9B9B9B", height: 20 }} />
               <div>{props.data.experience}</div>
             </div>
             <div className={styles.locExpSalChild}>
-              <LocalAtmIcon style={{ color: "#9B9B9B" }} />
+              <LocalAtmIcon style={{ color: "#9B9B9B", height: 20 }} />
               <div>{props.data.salary}</div>
             </div>
           </div>
-          <div className={styles.description}>{props.data.description}</div>
-          <div className={styles.skills}>
+          {/* <div className={styles.description}>{props.data.description}</div> */}
+          {/* <div className={styles.skills}>
             Skills: <span>{props.data.skills}</span>
-          </div>
-        </div>
-
-        <div className={styles.right}>
-          <StarBorderIcon style={{ color: "#9B9B9B" }} />
-          <ShareIcon style={{ color: "#9B9B9B" }} />
-          <button className={styles.applyBtn}>Apply</button>
+          </div> */}
         </div>
       </div>
 
-      <div styles={{ backgroundColor: "#FFFFFF" }}>
-        <span className={styles.postDetails}>
+      <div>
+        <span style = {{fontSize: 15, marginLeft: -880, marginLeft: -860}} >
           <span>PostedOn:{props.data.posted} | </span>
           <span>Total Views: {props.data.total_views} | </span>
           <span>Total Application: {props.data.total_applicants} | </span>
@@ -54,55 +57,49 @@ function JobPage(props) {
         </span>
       </div>
 
-      <div className={styles.main}>
-        <h4>JOB DESCRIPTION</h4>
+      <div style = {{marginTop: 10, padding: 20, backgroundColor: "white", width: 860, textAlign: "left", marginLeft: 60}}>
+        <h4  style= {{marginBottom: 20}} >JOB DESCRIPTION</h4>
         <p>
-          <span>
-            {props.data.job_description}
+          <ul>
+            {props.data.job_description && props.data.job_description.map(item => (
+              <li style = {{margin: 8, color: "#696969"}} > {item} </li>
+            ))}
             <br />
-            <span>Experience : {props.data.experience}</span>
-            <br />
-            <span>Walk-IN-INTERVIEW:{props.data.walk_in_interview_date}</span>
-            <br />
-            <span>Contact Number : {props.data.contact_no}</span>
+            <span style = {{color: "#696969"}} >For more details contact Ritesh : 8920888891</span>
             {/* <span>Email-Id : {props.data.}</span> */}
-          </span>
+          </ul>
         </p>
       </div>
 
-      <div className={styles.main}>
+      <div style = {{marginTop: 10, padding: 20, backgroundColor: "white", width: 860, textAlign: "left", marginLeft: 60}} >
         <h2>Job Details</h2>
         <span>
-          <h5>Industry : {props.data.industry}</h5>
+          <h5 style = {{marginTop: 20}}>Industry : {props.data.industry}</h5>
         </span>
 
         <span>
-          <h5>Function : {props.data.function}</h5>
+          <h5 style = {{marginTop: 10}}>Function : {props.data.function}</h5>
         </span>
 
         <span>
-          <h5>Roles : {props.data.roles}</h5>
+          <h5 style = {{marginTop: 10}}>Roles : {props.data.role}</h5>
         </span>
 
         <span>
-          <h5>Skills : {props.data.skills}</h5>
-        </span>
+          <h5 style = {{marginTop: 10}}>Skills : <button style = {{borderRadius: 20, background: "#D3D3D3", border: "0px", height: 30, width: 100, color: "grey"}} >{props.data.skills}</button></h5>
+        </span> 
 
         <span>
-          <h5>Education : {props.data.qualifications}</h5>
+          <h5 style = {{marginTop: 10}}>Education : {props.data.qualifications}</h5>
         </span>
       </div>
 
-      <div className={styles.main}>
-        <h2>About Recruiter</h2>
-        <span>Functions : {props.data.function}</span>
-        <br />
-        <span>Industries : {props.data.industry}</span>
-        <br />
-        <span>Skills : {props.data.skills}</span>
-        <br />
-        <span>Roles : {props.data.role}</span>
+      <div style = {{marginTop: 10, padding: 20, marginBottom: 50, backgroundColor: "white", width: 860, textAlign: "left", marginLeft: 60}}>
+        <h2 >About {props.data.company_name} </h2>
+        <div style= {{marginTop: 20, lineHeight: 2}}>We are a one stop solution for all types of industry recruitment. We are the leading job consultancy service providers in the industry with specialization in almost all sectors ranging from medical, hospitality, automotive, airlines, Engineering, banking to logistics, the list is endless. We completely analyze and understand our client's expectations for the recruitment and thus, strive hard to meet the same in highly professional manner.</div>
       </div>
+      <br/>
+      <Footer />
     </div>
   );
 }
