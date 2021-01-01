@@ -7,7 +7,7 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterStyles = styled.div`
-  background-color: #6C59D7;
+  background-color: #5D50A6;
   display: flex;
   flex-direction: row;
   color: white;

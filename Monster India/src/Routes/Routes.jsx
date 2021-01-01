@@ -25,7 +25,7 @@ return (
     <Route path="/workfromhome" component={WorkFromHome} />
     <Route path="/careertips" component={CareerTips} />
     <Route path="/resumeservices" component={ResumeServices} /> 
-    <Route path="/applied:id" component={Applied} /> 
+    <Route path="/applied/:id" component={Applied} /> 
 
     </Switch>    
 </div>

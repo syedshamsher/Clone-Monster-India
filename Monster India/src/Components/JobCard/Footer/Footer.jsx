@@ -20,7 +20,7 @@ export function Footer({jobs}) {
             <div className={styles.right}>
                 <StarBorderIcon style={{ color: "#9B9B9B"}}/>
                 <ShareIcon style={{ color: "#9B9B9B"}}/>
-                <button onClick = {() => handleClick(jobs.id)} >APPLY</button>
+                <button onClick = {() => handleClick(jobs.job_id)} >APPLY</button>
             </div>
         </div>
     )

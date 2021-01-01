@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     // maxWidth: 135,
     marginLeft: 25,
     height: "36px",
-    marginRight: '10px'
+    marginRight: '10px',
+    cursor: "pointer"
   },
   btn: {
     marginLeft: "auto"
