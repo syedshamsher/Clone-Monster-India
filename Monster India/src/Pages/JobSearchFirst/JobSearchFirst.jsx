@@ -1,8 +1,7 @@
 import React from 'react'
-import data from './data.json'
 import styled from 'styled-components'
 import { sendData } from '../../Redux/JobSearchFirst/action'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
 
@@ -25,6 +24,7 @@ const SuggestionBox = styled.div`
 `
 
 const JobSearchFirst = () => {
+    const data = useSelector(state => state.jobs.jobs)
     const [keyword, setKeyword] = React.useState("")
     const [experience, setExperience] = React.useState("")
     const [location, setLocation] = React.useState("")
@@ -90,18 +90,12 @@ const JobSearchFirst = () => {
             </SuggestionBox>
             <br />
             <select style = {{width: 350, height: 45, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey"}} value = {experience} onChange = {(e) => setExperience(e.target.value)} >
-                <option selected disabled value = "" hidden > Experience </option>
-                <option value = "0" > 0 </option>
-                <option value = "1" > 1 </option>
-                <option value = "2" > 2 </option>
-                <option value = "3" > 3 </option>
-                <option value = "4" > 4 </option>
-                <option value = "5" > 5 </option>
-                <option value = "6" > 6 </option>
-                <option value = "7" > 7 </option>
-                <option value = "8" > 8 </option>
-                <option value = "9" > 9 </option>
-                <option value = "10" > 10 </option>
+            <option selected disabled value = "" hidden > Experience </option>
+                        <option value = "0 - 1 Years" > 0 - 1 Years </option>
+                        <option value = "1 - 2 Years" > 1 - 2 Years </option>
+                        <option value = "2 - 5 Years" > 2 - 5 Years </option>
+                        <option value = "5 - 7 Years" > 5 - 7 Years </option>
+                        <option value = "7 - 10 Years" > 7 - 10 Years </option>
             </select>
             <input placeholder = "Location" style = {{width: 350, height: 32, border: "2px solid lightgrey", padding: 5,  color: "darkgrey"}} value= {location} onChange = {(e) => setLocation(e.target.value)} />
             <SuggestionBox style = {{maxHeight: 130, overflow: "scroll", position: "absolute", marginLeft: 350, marginTop: -20, width: 360, background: "white"}} active = {active} >
@@ -111,31 +105,27 @@ const JobSearchFirst = () => {
             </SuggestionBox>
             <select style = {{height: 45, width: 715, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey", zIndex: 0}} value = {industry} onChange = {(e) => setIndustry(e.target.value)} >
                 <option disabled selected value = "" hidden >Industry</option>
-                <option value = "education" > Education </option>
-                <option value = "FMCG" > FMCG </option>
-                <option value = "healthcare" > Healthcare </option>
-                <option value = "general" > General </option>
-                <option value = "engineering" > Engineering </option>
-                <option value = "fashion" > Fashion </option>
-                <option value = "other" > Other </option>
+                <option value = "Software" > Software </option>
+                <option value = "Banking" > Banking </option>
+                <option value = "Manufacturing" > Manufacturing </option>
+                <option value = "Recruitment" > Recruitment </option>
+                <option value = "E-Commerce" > E-Commerce </option>
             </select>
             <select style = {{height: 45, width: 715, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey", zIndex: 0}} value = {functions} onChange = {(e) => setFunctions(e.target.value)} >
                 <option disabled selected value = "" hidden >Function</option>
-                <option value = "admin" > Admin </option>
-                <option value = "finance" > Finance </option>
-                <option value = "sales" > Sales </option>
-                <option value = "engineer" > Engineer </option>
-                <option value = "manager" > Manager </option>
-                <option value = "accountant" > Accountant </option>
-                <option value = "editor" > Editor </option>
+                <option value = "IT" > IT </option>
+                <option value = "Manufacturing/Engineering" > Manufacturing/Engineering </option>
+                <option value = "IT- Technical Staff" > IT- Technical Staff </option>
+                <option value = "Advertising" > Advertising </option>
+                <option value = "Team Leader/Technical Leader" > Team Leader/Technical Leader </option>
             </select>
             <select style = {{height: 45, width: 715, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey", zIndex: 0}} value = {role} onChange = {(e) => setRoles(e.target.value)} >
                 <option disabled selected value = "" hidden >Role</option>
-                <option value = "software developer" > Software Developer </option>
-                <option value = "account manager" > Account Manager </option>
-                <option value = "sales manager" > Sales Manager </option>
-                <option value = "assistant" > Assistant </option>
-                <option value = "marketing manager" > Marketing Manager </option>
+                <option value = "Software Engineer/Programmer" > Software Engineer/Programmer </option>
+                <option value = "Application Designer Specialist" > Application Designer Specialist </option>
+                <option value = "Application Engineer" > Application Engineer </option>
+                <option value = "Software Developer" > Software Developer </option>
+                <option value = "Team Leader/Technical Leader" > Team Leader/Technical Leader </option>
             </select>
             <button onClick= {handleClick} style = {{width: 716, height: 50, padding: 10, marginLeft: "auto", background: "#6C59D7", color: "white", fontSize: 16, fontWeight: 700}} >Search</button>
         </div>

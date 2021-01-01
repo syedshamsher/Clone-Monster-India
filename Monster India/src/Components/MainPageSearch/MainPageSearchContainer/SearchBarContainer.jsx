@@ -1,10 +1,8 @@
 import React from 'react'
 import "./MainPageSearch.css"
-import { Button  } from '@material-ui/core';
 import styled from 'styled-components'
-import data from './data.json'
 import { sendData } from '../../../Redux/JobSearchFirst/action';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 const SuggestionBox = styled.div`
@@ -25,6 +23,7 @@ const SuggestionBox = styled.div`
 `
 
 export const SearchBarContainer = () => {
+    const data = useSelector(state => state.jobs.jobs)
     const [keyword, setKeyword] = React.useState("")
     const [keywordSuggestion, setKeywordSuggestion] = React.useState("")
     const [active, setActive] = React.useState(0)
@@ -41,9 +40,8 @@ export const SearchBarContainer = () => {
             setKeywordSuggestion("")
         }
         else{
-            let output2 = data.filter(item => item.profile_name.toLowerCase().indexOf(keyword) !== -1)
-            console.log(output2)
-            setKeywordSuggestion(output2)
+            let output = data.filter(item => item.profile_name.toLowerCase().indexOf(keyword) !== -1)
+            setKeywordSuggestion(output)
         }
 
     }, [keyword])
