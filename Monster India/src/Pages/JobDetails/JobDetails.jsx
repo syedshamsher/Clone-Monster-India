@@ -1,35 +1,32 @@
 import React from 'react'
 import {useSelector} from "react-redux"
 import { useParams } from 'react-router-dom'
+import { JobPage } from '../JobPage/JobPage'
+
 
 export const JobDetails = (props) => {
-    console.log(props,"props")
-
-    const [data, setData] = React.useState([])
+    const [data, setData] = React.useState({})
     const jobs = useSelector(state => state.jobs.jobs)
     const params = useParams()
-    console.log( data, "data initailly")
+    
+    // console.log(jobs)
+    const id  = Number( params.id )
 
-   
     React.useEffect( () =>{
-        const id  = Number( params.id )
-         jobs.filter( (item) =>  {
-
+        jobs.find( (item) =>  {
+            // console.log( item.job_id, "----", id )
             return ( 
-                item.job_id === id && setData( [...data, item])
+                item.job_id === id && setData( item )
              )
          } )
-        
-        
-    }, [] )
 
+    },[] )
+    
+    
     console.log(data)
-
-
     return (
         <div>
-            JOB DETAILS PAGE
-          {/* bikram u can add your component here */}
+            <JobPage data = {data} />
         </div>
     )
 }

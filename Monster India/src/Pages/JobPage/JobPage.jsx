@@ -6,34 +6,35 @@ import WorkIcon from "@material-ui/icons/Work";
 import ShareIcon from "@material-ui/icons/Share";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 
-function JobPage({ jobs }) {
+function JobPage(props) {
+  console.log( props.data )
   return (
     <div className={styles.wrapper}>
       <div className={styles.main}>
         <div>
           <div className={styles.profileName}>
-            {jobs.profile_name.toUpperCase()}
+            {props.data.profile_name}
           </div>
           <div className={styles.companyName}>
-            {jobs.company_name.toUpperCase()}
+            {props.data.company_name}
           </div>
           <div className={styles.locExpSal}>
             <div className={styles.locExpSalChild}>
               <LocationOnIcon style={{ color: "#9B9B9B" }} />
-              <div>{jobs.location.toUpperCase()}</div>
+              <div>{props.data.location}</div>
             </div>
             <div className={styles.locExpSalChild}>
               <WorkIcon style={{ color: "#9B9B9B" }} />
-              <div>{jobs.experience}</div>
+              <div>{props.data.experience}</div>
             </div>
             <div className={styles.locExpSalChild}>
               <LocalAtmIcon style={{ color: "#9B9B9B" }} />
-              <div>{jobs.salary}</div>
+              <div>{props.data.salary}</div>
             </div>
           </div>
-          <div className={styles.description}>{jobs.description}</div>
+          <div className={styles.description}>{props.data.description}</div>
           <div className={styles.skills}>
-            Skills: <span>{jobs.skills}</span>
+            Skills: <span>{props.data.skills}</span>
           </div>
         </div>
 
@@ -46,10 +47,10 @@ function JobPage({ jobs }) {
 
       <div styles={{ backgroundColor: "#FFFFFF" }}>
         <span className={styles.postDetails}>
-          <span>PostedOn:{jobs.posted} | </span>
-          <span>Total Views: {jobs.total_views} | </span>
-          <span>Total Application: {jobs.total_applicants} | </span>
-          <span>Job ID: {jobs.job_id}</span>
+          <span>PostedOn:{props.data.posted} | </span>
+          <span>Total Views: {props.data.total_views} | </span>
+          <span>Total Application: {props.data.total_applicants} | </span>
+          <span>Job ID: {props.data.job_id}</span>
         </span>
       </div>
 
@@ -57,14 +58,14 @@ function JobPage({ jobs }) {
         <h4>JOB DESCRIPTION</h4>
         <p>
           <span>
-            {jobs.job_description}
+            {props.data.job_description}
             <br />
-            <span>Experience : {jobs.experience}</span>
+            <span>Experience : {props.data.experience}</span>
             <br />
-            <span>Walk-IN-INTERVIEW:{jobs.walk_in_interview_date}</span>
+            <span>Walk-IN-INTERVIEW:{props.data.walk_in_interview_date}</span>
             <br />
-            <span>Contact Number : {jobs.contact_no}</span>
-            {/* <span>Email-Id : {jobs.}</span> */}
+            <span>Contact Number : {props.data.contact_no}</span>
+            {/* <span>Email-Id : {props.data.}</span> */}
           </span>
         </p>
       </div>
@@ -72,38 +73,38 @@ function JobPage({ jobs }) {
       <div className={styles.main}>
         <h2>Job Details</h2>
         <span>
-          <h5>Industry : {jobs.industry}</h5>
+          <h5>Industry : {props.data.industry}</h5>
         </span>
 
         <span>
-          <h5>Function : {jobs.function}</h5>
+          <h5>Function : {props.data.function}</h5>
         </span>
 
         <span>
-          <h5>Roles : {jobs.roles}</h5>
+          <h5>Roles : {props.data.roles}</h5>
         </span>
 
         <span>
-          <h5>Skills : {jobs.skills}</h5>
+          <h5>Skills : {props.data.skills}</h5>
         </span>
 
         <span>
-          <h5>Education : {jobs.qualifications}</h5>
+          <h5>Education : {props.data.qualifications}</h5>
         </span>
       </div>
 
       <div className={styles.main}>
         <h2>About Recruiter</h2>
-        <span>Functions : {jobs.function}</span>
+        <span>Functions : {props.data.function}</span>
         <br />
-        <span>Industries : {jobs.industry}</span>
+        <span>Industries : {props.data.industry}</span>
         <br />
-        <span>Skills : {jobs.skills}</span>
+        <span>Skills : {props.data.skills}</span>
         <br />
-        <span>Roles : {jobs.roles}</span>
+        <span>Roles : {props.data.role}</span>
       </div>
     </div>
   );
 }
 
-export default JobPage;
+export {JobPage};
