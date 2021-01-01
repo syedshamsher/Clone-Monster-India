@@ -8,6 +8,7 @@ import { getJobData } from '../../../Redux/JobSearch/action'
 import { Card } from '../../JobCard/Card';
 import { Footer } from '../../JobCard/Footer';
 import { useHistory } from "react-router-dom";
+import { FilteredJob } from '../../FilteredJob';
 
 export function Sidebar() {
     const filteredJobs = useSelector(state => state.filteredJobs)
@@ -77,9 +78,9 @@ export function Sidebar() {
         history.push( `/job-details/${id}` )
     }
 
-    const handleClick = () => {
-        dispatch( getFilteredJobData(params) )
-    }
+    // const handleClick = () => {
+    //     dispatch( getFilteredJobData(params) )
+    // }
     
     const handleFunctionOpt = () => {
         openFunctionOpt ? setOpenFunctionOpt(false) : setOpenFunctionOpt(true);
@@ -116,9 +117,9 @@ export function Sidebar() {
     return (
         <div className={styles.wrapper}>
             <div>
-                <div>
+                {/* <div>
                     <button onClick={handleClick}>Filter</button>
-                </div>
+                </div> */}
                 <div className={styles.headerWrapper}>    
                     <div className={styles.header} >Filter By</div>
                     <div className={styles.divider}></div>
@@ -228,28 +229,6 @@ export function Sidebar() {
                     <div className={styles.divider}></div>
                 </div>
             </div>
-            <div>
-
-                {
-                    filteredJobs.jobs.length === 0 ?
-
-                    <div> No Matches </div> :
-
-
-                        filteredJobs.jobs?.map((item) => {
-                            return (
-                                <div key={item.job_id}>
-                                    <div onClick={() => goToJobDetails(item.job_id)}>
-                                      <Card jobs={item}/>
-                                    </div>
-                                    <Footer jobs={item}/>
-                                </div>
-                            )
-                        }) 
-                }
-                
-            </div>
-
         </div>
 
     )
