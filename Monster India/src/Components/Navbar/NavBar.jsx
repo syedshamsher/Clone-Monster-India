@@ -56,17 +56,22 @@ export default function NavBar() {
   }
 
   const handleJobSearch = (event) => {
-    // setJobSearch(event.currentTarget);
     history.push('/jobsearchfirst')
   };
+  
+  const handleJobDropDown = (event) => {
+    setJobSearch(event.currentTarget);
+  }
 
   const handleJobSearchClose = () => {
     setJobSearch(null);
   };
 
   const handleWfh = (event) => {
-    setWfh(event.currentTarget);
     history.push('/workfromhome')
+  };
+  const handleWfhDropDown = (event) => {
+    setWfh(event.currentTarget);
   };
 
   const handleWfhClose = () => {
@@ -74,8 +79,11 @@ export default function NavBar() {
   };
 
   const handleCareer = (event) => {
-    setCareer(event.currentTarget);
     history.push('/careertips')
+  };
+
+  const handleCareerDropDown = (event) => {
+    setCareer(event.currentTarget);
   };
 
   const handleCareerClose = () => {
@@ -83,8 +91,11 @@ export default function NavBar() {
   };
 
   const handleResume = (event) => {
-    setResume(event.currentTarget);
     history.push('/resumeservices')
+  };
+
+  const handleResumeDropDown = (event) => {
+    setResume(event.currentTarget);
   };
 
   const handleResumeClose = () => {
@@ -100,7 +111,7 @@ export default function NavBar() {
   };
 
   const handleLogininOpen = () => {
-    setLogin(true)
+    history.push('/loginpage')
   }
 
   const handleLoginClose = () => {
@@ -109,153 +120,205 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="sticky" color= "white">
+      <AppBar position="sticky" color="white">
         <Toolbar>
           <Hidden smUp>
-        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon onClick={handleDrawerOpen}/>
-        </IconButton>
-        </Hidden>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon onClick={handleDrawerOpen} />
+            </IconButton>
+          </Hidden>
 
-        <Drawer
-          className={classes.drawer}
-          variant="persistent"
-          anchor="left"
-          open={open}
-          classes={{
-            paper: classes.drawer
-          }}
-        >
-          <SideNavBar 
-            handleDrawerClose={handleDrawerClose} 
-            handleJobSearch={handleJobSearch}
-            handleWfh={handleWfh}
-            handleCareer={handleCareer}
-            handleResume={handleResume}
+          <Drawer
+            className={classes.drawer}
+            variant="persistent"
+            anchor="left"
+            open={open}
+            classes={{
+              paper: classes.drawer,
+            }}
+          >
+            <SideNavBar
+              handleDrawerClose={handleDrawerClose}
+              handleJobSearch={handleJobSearch}
+              handleWfh={handleWfh}
+              handleCareer={handleCareer}
+              handleResume={handleResume}
             />
-        </Drawer>
-        
-      <Tabs>
-        {/* <Tab className={classes.monsterLogo}> */}
-        {/* <Hidden smUp> */}
-          <img 
-          xs={12}
-          sm={12}
-          md={3}
-          src={monsterlogo} 
-          onClick = {handleLandingPage}
-          alt="Kitty Katty!" 
-          className={classes.logo} 
-          />
-          {/* </Hidden> */}
-      {/* </Tab> */}
-      <Hidden xsDown>
-      <Tab label="Job Search" onClick={handleJobSearch} className={classes.tab}/>
-      </Hidden>
-     
-          <Menu
-        id="Job-Search"
-        anchorEl={jobSearch}
-        keepMounted
-        open={Boolean(jobSearch)}
-        onClose={handleJobSearchClose}
-      >
-        <MenuItem onClick={handleJobSearchClose}>JOBS BY LOCATION</MenuItem>
-        <MenuItem onClick={handleJobSearchClose}>JOBS BY SKILLS</MenuItem>
-        <MenuItem onClick={handleJobSearchClose}>JOBS BY TITLE</MenuItem>
-        <MenuItem onClick={handleJobSearchClose}>JOBS BY FUNCTION</MenuItem>
-        <MenuItem onClick={handleJobSearchClose}>JOBS BY INDUSTRY</MenuItem>
-        <MenuItem onClick={handleJobSearchClose}>JOBS BY EDUCATION</MenuItem>
-        <MenuItem onClick={handleJobSearchClose}>JOBS BY COMPANY</MenuItem>
-        <MenuItem onClick={handleJobSearchClose}>JOBS BY CONSULTANT</MenuItem>
-        <MenuItem onClick={handleJobSearchClose}>JOBS BY RECRUITER</MenuItem>
-        <MenuItem onClick={handleJobSearchClose}>FRESHER JOBS</MenuItem>
-        <MenuItem onClick={handleJobSearchClose}>OTHER JOBS</MenuItem>
-      </Menu>
-      <Hidden xsDown>
-      <Tab label="WORK FROM HOME" onClick={handleWfh} color="inherit"  className={classes.tab}/>
-      </Hidden>
-          <Menu
-        id="Job-Search"
-        anchorEl={wfh}
-        keepMounted
-        open={Boolean(wfh)}
-        onClose={handleWfhClose}
-      >
-        <MenuItem onClick={handleWfhClose}>JOBS IN BANGLORE</MenuItem>
-        <MenuItem onClick={handleWfhClose}>JOBS BY SKILLS</MenuItem>
-        <MenuItem onClick={handleWfhClose}>JOBS BY TITLE</MenuItem>
-        <MenuItem onClick={handleWfhClose}>JOBS BY FUNCTION</MenuItem>
-        <MenuItem onClick={handleWfhClose}>JOBS BY INDUSTRY</MenuItem>
-        <MenuItem onClick={handleWfhClose}>JOBS BY EDUCATION</MenuItem>
-        <MenuItem onClick={handleWfhClose}>JOBS BY COMPANY</MenuItem>
-        <MenuItem onClick={handleWfhClose}>JOBS BY CONSULTANT</MenuItem>
-        <MenuItem onClick={handleWfhClose}>JOBS BY RECRUITER</MenuItem>
-        <MenuItem onClick={handleWfhClose}>FRESHER JOBS</MenuItem>
-        <MenuItem onClick={handleWfhClose}>OTHER JOBS</MenuItem>
-      </Menu>
-      <Hidden smDown>
-      <Tab label="CAREER TIPS" onClick={handleCareer}  className={classes.tab}/>
-      </Hidden>
-          <Menu
-        id="Job-Search"
-        anchorEl={career}
-        keepMounted
-        open={Boolean(career)}
-        onClose={handleCareerClose}
-      >
-        <MenuItem onClick={handleCareerClose}>COVID 19 CAREER ADVICE</MenuItem>
-        <MenuItem onClick={handleCareerClose}>JOB SEARCH STRATERGY</MenuItem>
-        <MenuItem onClick={handleCareerClose}>RESUME & COVER LETTER </MenuItem>
-        <MenuItem onClick={handleCareerClose}>INTERVIEW TIPS</MenuItem>
-        <MenuItem onClick={handleCareerClose}>EXPERT'S VIDEOS</MenuItem>
-        <MenuItem onClick={handleCareerClose}>CAREER MANAGEMENT</MenuItem>
-        <MenuItem onClick={handleCareerClose}>SALARY NEGOTIATIONS</MenuItem>
-        <MenuItem onClick={handleCareerClose}>RESEARCH REPORTS</MenuItem>
-        <MenuItem onClick={handleCareerClose}>COURSES</MenuItem>
-      </Menu>
+          </Drawer>
 
-      <Hidden mdDown>
-      <Tab label="RESUME SERVICES" onClick={handleResume}  className={classes.tab}/>
-      </Hidden>
-          <Menu
-        id="Job-Search"
-        anchorEl={resume}
-        keepMounted
-        open={Boolean(resume)}
-        onClose={handleResumeClose}
-      >
-        <MenuItem onClick={handleResumeClose}>XPRESS RESUME</MenuItem>
-        <MenuItem onClick={handleResumeClose}>RIGHT RESUME</MenuItem>
-        <MenuItem onClick={handleResumeClose}>CAREER BOOSTER</MenuItem>
-        <MenuItem onClick={handleResumeClose}>RESUME HIGHLIGHTER</MenuItem>
-        <MenuItem onClick={handleResumeClose}>PYSCHOMETRIC TEST</MenuItem>
-      </Menu>
-        </Tabs>
-         
-        <Button color="inherit" 
-        className={classes.btn}
-        onClick={handleLogininOpen}
-        >Login</Button>
-
-        <Drawer
-          className={classes.drawer}
-          variant="persistent"
-          anchor="right"
-          open={login}
-          classes={{
-            paper: classes.drawer
-          }}
-        >
-          <SideNavBar 
-            handleDrawerClose={handleLoginClose} 
-            handleJobSearch={handleJobSearch}
-            handleWfh={handleWfh}
-            handleCareer={handleCareer}
-            handleResume={handleResume}
+          <Tabs>
+            {/* <Tab className={classes.monsterLogo}> */}
+            {/* <Hidden smUp> */}
+            <img
+              xs={12}
+              sm={12}
+              md={3}
+              src={monsterlogo}
+              onClick={handleLandingPage}
+              alt="Kitty Katty!"
+              className={classes.logo}
             />
-        </Drawer>
+            {/* </Hidden> */}
+            {/* </Tab> */}
+            <Hidden xsDown>
+              <Tab
+                label="Job Search"
+                onClick={handleJobSearch}
+                className={classes.tab}
+                // onMouseOver={handleJobDropDown}
+              />
+            </Hidden>
 
+            <Menu
+              id="Job-Search"
+              anchorEl={jobSearch}
+              keepMounted
+              open={Boolean(jobSearch)}
+              onMouseOut={handleJobSearchClose}
+            >
+              <MenuItem onClick={handleJobSearchClose}>
+                JOBS BY LOCATION
+              </MenuItem>
+              <MenuItem onClick={handleJobSearchClose}>JOBS BY SKILLS</MenuItem>
+              <MenuItem onClick={handleJobSearchClose}>JOBS BY TITLE</MenuItem>
+              <MenuItem onClick={handleJobSearchClose}>
+                JOBS BY FUNCTION
+              </MenuItem>
+              <MenuItem onClick={handleJobSearchClose}>
+                JOBS BY INDUSTRY
+              </MenuItem>
+              <MenuItem onClick={handleJobSearchClose}>
+                JOBS BY EDUCATION
+              </MenuItem>
+              <MenuItem onClick={handleJobSearchClose}>
+                JOBS BY COMPANY
+              </MenuItem>
+              <MenuItem onClick={handleJobSearchClose}>
+                JOBS BY CONSULTANT
+              </MenuItem>
+              <MenuItem onClick={handleJobSearchClose}>
+                JOBS BY RECRUITER
+              </MenuItem>
+              <MenuItem onClick={handleJobSearchClose}>FRESHER JOBS</MenuItem>
+              <MenuItem onClick={handleJobSearchClose}>OTHER JOBS</MenuItem>
+            </Menu>
+            <Hidden xsDown>
+              <Tab
+                label="WORK FROM HOME"
+                onClick={handleWfh}
+                onMouseOver={handleWfhDropDown}
+                color="inherit"
+                className={classes.tab}
+              />
+            </Hidden>
+            <Menu
+              id="Job-Search"
+              anchorEl={wfh}
+              keepMounted
+              open={Boolean(wfh)}
+              onMouseOut={handleWfhClose}
+            >
+              <MenuItem onClick={handleWfhClose}>JOBS IN BANGLORE</MenuItem>
+              <MenuItem onClick={handleWfhClose}>JOBS BY SKILLS</MenuItem>
+              <MenuItem onClick={handleWfhClose}>JOBS BY TITLE</MenuItem>
+              <MenuItem onClick={handleWfhClose}>JOBS BY FUNCTION</MenuItem>
+              <MenuItem onClick={handleWfhClose}>JOBS BY INDUSTRY</MenuItem>
+              <MenuItem onClick={handleWfhClose}>JOBS BY EDUCATION</MenuItem>
+              <MenuItem onClick={handleWfhClose}>JOBS BY COMPANY</MenuItem>
+              <MenuItem onClick={handleWfhClose}>JOBS BY CONSULTANT</MenuItem>
+              <MenuItem onClick={handleWfhClose}>JOBS BY RECRUITER</MenuItem>
+              <MenuItem onClick={handleWfhClose}>FRESHER JOBS</MenuItem>
+              <MenuItem onClick={handleWfhClose}>OTHER JOBS</MenuItem>
+            </Menu>
+            <Hidden smDown>
+              <Tab
+                label="CAREER TIPS"
+                onClick={handleCareer}
+                onMouseOver={handleCareerDropDown}
+                className={classes.tab}
+              />
+            </Hidden>
+            <Menu
+              id="Job-Search"
+              anchorEl={career}
+              keepMounted
+              open={Boolean(career)}
+              onMouseOut={handleCareerClose}
+            >
+              <MenuItem onClick={handleCareerClose}>
+                COVID 19 CAREER ADVICE
+              </MenuItem>
+              <MenuItem onClick={handleCareerClose}>
+                JOB SEARCH STRATERGY
+              </MenuItem>
+              <MenuItem onClick={handleCareerClose}>
+                RESUME & COVER LETTER{" "}
+              </MenuItem>
+              <MenuItem onClick={handleCareerClose}>INTERVIEW TIPS</MenuItem>
+              <MenuItem onClick={handleCareerClose}>EXPERT'S VIDEOS</MenuItem>
+              <MenuItem onClick={handleCareerClose}>CAREER MANAGEMENT</MenuItem>
+              <MenuItem onClick={handleCareerClose}>
+                SALARY NEGOTIATIONS
+              </MenuItem>
+              <MenuItem onClick={handleCareerClose}>RESEARCH REPORTS</MenuItem>
+              <MenuItem onClick={handleCareerClose}>COURSES</MenuItem>
+            </Menu>
+
+            <Hidden mdDown>
+              <Tab
+                label="RESUME SERVICES"
+                onClick={handleResume}
+                onMouseOver={handleResumeDropDown}
+                className={classes.tab}
+              />
+            </Hidden>
+            <Menu
+              id="Job-Search"
+              anchorEl={resume}
+              keepMounted
+              open={Boolean(resume)}
+              onMouseOut={handleResumeClose}
+            >
+              <MenuItem onClick={handleResumeClose}>XPRESS RESUME</MenuItem>
+              <MenuItem onClick={handleResumeClose}>RIGHT RESUME</MenuItem>
+              <MenuItem onClick={handleResumeClose}>CAREER BOOSTER</MenuItem>
+              <MenuItem onClick={handleResumeClose}>
+                RESUME HIGHLIGHTER
+              </MenuItem>
+              <MenuItem onClick={handleResumeClose}>PYSCHOMETRIC TEST</MenuItem>
+            </Menu>
+          </Tabs>
+
+          <Button
+            color="inherit"
+            className={classes.btn}
+            onClick={handleLogininOpen}
+          >
+            Login
+          </Button>
+
+          {/* <Drawer
+            className={classes.drawer}
+            variant="persistent"
+            anchor="right"
+            open={login}
+            classes={{
+              paper: classes.drawer,
+            }}
+          >
+            <SideNavBar
+              handleDrawerClose={handleLoginClose}
+              handleJobSearch={handleJobSearch}
+              handleWfh={handleWfh}
+              handleCareer={handleCareer}
+              handleResume={handleResume}
+            />
+          </Drawer> */}
         </Toolbar>
       </AppBar>
     </div>
