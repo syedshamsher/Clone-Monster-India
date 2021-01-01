@@ -149,7 +149,7 @@ export default function Login() {
         </Grid>
       </Grid>
       : 
-      <Redirect to="/" /> 
+      <Redirect to="/jobsearch" /> 
       }
     </>
   )

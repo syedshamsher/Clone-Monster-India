@@ -60,7 +60,7 @@ export default function NavBar() {
   };
   
   const handleJobDropDown = (event) => {
-    setJobSearch(event.currentTarget);
+    // setJobSearch(event.currentTarget);
   }
 
   const handleJobSearchClose = () => {

@@ -31,6 +31,7 @@ return (
       <Route path="/careertips" component={CareerTips} />
       <Route path="/resumeservices" component={ResumeServices} />
       <Route path="/loginpage" component={Login} />
+      <Route path="/applied" component={CareerTips} />
     </Switch>
   </div>
 );
