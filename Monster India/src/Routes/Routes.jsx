@@ -10,6 +10,7 @@ import { Sidebar } from '../Components/FilterOption/Sidebar/Sidebar';
 import JobSearchFirst from '../Pages/JobSearchFirst/JobSearchFirst';
 import {MainPageSearch} from '../Components/MainPageSearch/MainPageSearch'
 import { LandingPage } from '../Pages/Landing Page/LandingPage';
+import { Applied } from '../Pages/Applied/Applied';
 
 function Routes(){
 return (
@@ -24,6 +25,8 @@ return (
     <Route path="/workfromhome" component={WorkFromHome} />
     <Route path="/careertips" component={CareerTips} />
     <Route path="/resumeservices" component={ResumeServices} /> 
+    <Route path="/applied:id" component={Applied} /> 
+
     </Switch>    
 </div>
 )

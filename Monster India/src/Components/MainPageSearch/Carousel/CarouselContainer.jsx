@@ -25,7 +25,7 @@ export const CarouselContainer = ({ breakPoints }) => {
     return (
         <div className={styles.carousel_wrapper}>
             <div className={styles.header}>
-                <Header heading="work from home jobs" />
+                <Header heading="Work From Home Jobs" />
                 <ViewAllTag />
             </div>
 
@@ -34,7 +34,7 @@ export const CarouselContainer = ({ breakPoints }) => {
                     ?.filter((item) => item.job_type == "work from home")
                     .map((item) => {
                         return (
-                            <div
+                            <div style = {{border: "1px solid grey"}}
                                 className={styles.mainContainer}
                                 onClick={() => goToJobDetails(item.job_id)}
                             >
