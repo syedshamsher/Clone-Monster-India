@@ -17,19 +17,19 @@ function Card({jobs}) {
                 <div className={styles.locExpSal}>
                     <div className={styles.locExpSalChild}>
                         <LocationOnIcon style={{ color: "#9B9B9B", height: 20, marginRight: 0}}/>
-                        <div style ={{marginRight: 140}}>
+                        <div>
                         {jobs.location}
                         </div>
                     </div>
                     <div className={styles.locExpSalChild}>
                         <WorkIcon style={{ color: "#9B9B9B", height: 20}}/>
-                        <div style = {{marginRight: 140}} >
+                        <div >
                         {jobs.experience}
                         </div>
                     </div>
                     <div className={styles.locExpSalChild}>
                         <LocalAtmIcon style={{ color: "#9B9B9B", height: 20}}/>
-                        <div style = {{marginRight: 100}} >
+                        <div >
                         {jobs.salary}
                         </div>
                     </div>
@@ -43,7 +43,7 @@ function Card({jobs}) {
                         ): "")
                     }
                 </div>
-                <div style = {{marginRight: 600, marginBottom: 10}} >
+                <div className={styles.skills} >
                 Skills: <span>{jobs.skills}</span>
                 </div>
             </div>

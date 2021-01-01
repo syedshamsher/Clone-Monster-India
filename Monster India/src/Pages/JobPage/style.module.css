@@ -1,85 +1,80 @@
 .wrapper {
+    width: 1200px;
+    background-color: #EBEBEB;
+  }
+  .main {
+    margin: 50px;
     width: 700px;
-    text-align: left;
-}
-
-.main {
-    background-color: var(--monster-background);
-}
-
-.profileName {
+    background-color: #FFFFFF;
+  }
+  .firstbox>div{
+  display: flex;
+  margin: 50px;
+  width: 700px;
+  background-color: #FFFFFF;
+  }
+  .profileName {
     margin: 10px;
     padding-top: 10px;
     font-size: 18px;
     font-weight: 600;
-}
-
-.companyName {
+  }
+  .companyName {
     margin: 10px;
     margin-top: -10px;
     font-size: 15px;
     font-weight: 600;
     color:  #6C54DA;
-}
-
-.locExpSal {
+  }
+  .locExpSal {
     display: flex;
-    justify-content: space-between;
-    margin-right: 80px;
-}
-
-.locExpSalChild {
+  }
+  .locExpSalChild {
     display: flex;
-
     margin: 10px;
     margin-top: -5px;
-}
-
-.locExpSalChild > div {
+  }
+  .locExpSalChild > div {
     margin-left: 10px;
-}
-
-.footerWrapper {
+  }
+  .footerWrapper {
     background-color: #EBEBEB;
     display: flex;
-    width: 700px;
+    width: 650px;
     height: 50px;
     justify-content: space-between;
-}
-
-.left {
+  }
+  .left {
     margin: 10px;
-}
-.right {
+  }
+  .right {
     display: flex;
     justify-content: space-evenly;
     margin: 10px;
-}
-
-.right > button {
+  }
+  .right > button {
     margin-left: 10px;
-    border: 2px solid #6C54DA;
-    width: 80px;
-}
-
-.right > button:hover {
+    border: 2px solid #6C54DA
+  }
+  .right > button:hover {
     background-color: #6C54DA;
     color: white;
-}
-
-.cardDiv {
+  }
+  .cardDiv {
     margin: 10px;
-}
-
-span {
-    color: rgb(160, 158, 158)
-}
-
-.description { 
+  }
+  span {
+    color: #9A9995
+  }
+  .description {
     margin: 10px;
     margin-top: -10px
-}
-
-.skills {
+  }
+  .skills {
     margin-left: 10px;
-}
+  }
+  .applyBtn {
+  background-color: #6C54DA;
+  padding: 5px 15px;
+  color: #F5F5F5
+  }

@@ -3,7 +3,6 @@ import {useSelector} from "react-redux"
 import { useParams } from 'react-router-dom'
 import { JobPage } from '../JobPage/JobPage'
 
-
 export const JobDetails = (props) => {
     const [data, setData] = React.useState({})
     const jobs = useSelector(state => state.jobs.jobs)

@@ -1,3 +1,8 @@
+body {
+  --monster-color: #6C54DA;
+  --monster-background: #F5F5F5;
+}
+
 .App {
   text-align: center;
 }
