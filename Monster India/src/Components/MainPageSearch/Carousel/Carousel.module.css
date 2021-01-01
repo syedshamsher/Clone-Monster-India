@@ -52,3 +52,10 @@
     
 
 }
+
+.companyImageContainer{
+    width: 100px;
+    border-radius: 15px;
+    color: black;
+    margin: 0 15px;
+}
