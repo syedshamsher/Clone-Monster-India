@@ -14,6 +14,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSelector, useDispatch } from "react-redux";
 import { loginSuccess, loginFailure } from "../../Redux/Login/action";
+import { Redirect } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -63,7 +64,7 @@ export default function Login() {
   const classes = useStyles();
   const [email, setEmail] = React.useState();
   const [password, setPassword] = React.useState();
-  const isAuth = useSelector((state) => state.isauth);
+  const isAuth = useSelector((state) => state.auth.isAuth);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -77,78 +78,87 @@ export default function Login() {
 
   return (
     <>
-     {/* {!isAuth ?return ( */}
-
-       <Grid container component="main" className={classes.root}>
-      <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        <div className={classes.paper}>
-          {/* <Avatar className={classes.avatar}>
+      {!isAuth ? (
+        <Grid container component="main" className={classes.root}>
+          <CssBaseline />
+          <Grid item xs={false} sm={4} md={7} className={classes.image} />
+          <Grid
+            item
+            xs={12}
+            sm={8}
+            md={5}
+            component={Paper}
+            elevation={6}
+            square
+          >
+            <div className={classes.paper}>
+              {/* <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar> */}
-          <Typography component="h1" variant="h5">
-            Login in
-          </Typography>
-          <form className={classes.form} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              // autoComplete="email"
-              onChange={(e) => setEmail(e.target.value)}
-              autoFocus
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              // autoComplete="current-password"
-              onChange={(e) => setPassword(e.target.value)}
-              autoFocus
-              />
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-                onClick={handleSubmit}
-                >
-                Login In
-              </Button>
+              <Typography component="h1" variant="h5">
+                Login in
+              </Typography>
+              <form className={classes.form} noValidate>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  // autoComplete="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  autoFocus
+                />
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  // autoComplete="current-password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  autoFocus
+                />
+                <Grid container>
+                  <Grid item xs>
+                    <Link href="#" variant="body2">
+                      Forgot password?
+                    </Link>
+                  </Grid>
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                    className={classes.submit}
+                    onClick={handleSubmit}
+                  >
+                    Login In
+                  </Button>
 
-              <Grid item>
-                <span>OR</span>
-                <br />
-                <Link href="#" variant="body2">
-                  {"Login via OTP"} {isAuth}
-                </Link>
-              </Grid>
-            </Grid>
-            <Box mt={5}>
-              <Copyright />
-            </Box>
-          </form>
-        </div>
-      </Grid>
-    </Grid>
-    )
+                  <Grid item>
+                    <span>OR</span>
+                    <br />
+                    <Link href="#" variant="body2">
+                      {"Login via OTP"} {isAuth}
+                    </Link>
+                  </Grid>
+                </Grid>
+                <Box mt={5}>
+                  <Copyright />
+                </Box>
+              </form>
+            </div>
+          </Grid>
+        </Grid>
+      ) : (
+        <Redirect to="/jobsearch" />
+      )}
     </>
   );
 }
