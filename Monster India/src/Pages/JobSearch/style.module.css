@@ -1,10 +1,17 @@
 .wrapper {
-    
+
 }
 
 .main {
     display: flex;
     justify-content: space-evenly;
+}
+
+.searchBarWrapper {
+    display: flex;
+    margin-top: 20px;
+    background-color: #E8E8E8;
+    padding:20px
 }
 
 .sidebarWrapper {
@@ -64,3 +71,64 @@
     color: white;
 }
 
+#suggestBox  {
+    overflow-y: scroll;
+    max-height: 130px;
+    position: absolute; 
+    max-height: 130px;
+    position: absolute; 
+    text-align: left;
+    width: 585px;
+    background: white;
+    margin-left: 15px;
+    margin-top: 48px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#locSuggestBox  {
+    overflow-y: scroll;
+    max-height: 130px;
+    position: absolute; 
+    text-align: left;
+    width: 308px;
+    background: white;
+    margin-left: 5;
+    margin-top: 50px;
+    outline: none;
+    border: none;
+}
+
+#expSuggestBox {
+}
+
+.keywordOpt {
+    width: 600px;
+    height: 40px;
+}
+
+.expOpt {
+    height: 47px;
+    outline: none;
+    border: none;
+    margin-left: 3px;
+}
+
+.locationOpt {
+    height: 45px;
+    margin-left: 3px;
+    width: 300px;
+    outline: none;
+    border: none;
+}
+
+.searchBtn {
+    height: 49px;
+    width: 100px;    
+    background-color: var(--monster-color);
+    outline: none;
+    border: none;
+    color: white;
+}
