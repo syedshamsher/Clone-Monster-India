@@ -23,10 +23,10 @@ const JobSearch = () => {
 
     const SuggestionBox = styled.div`
     & * {
-        position: relative;
-        width: 500px;
-        padding: 5px;
-        height: 20px;
+        // position: relative;
+        width: 520px;
+        padding: 20px;
+        height: 40px;
         backgroundColor: white;
         padding: 8px;
         border-bottom: 0.5px solid lightgrey
@@ -71,10 +71,10 @@ const JobSearch = () => {
 
     // console.log(jobs)
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} style = {{marginTop: 80}} >
                 <div className={styles.searchBarWrapper}>
                     {/*SearchBar*/}
-                    <input 
+                    {/* <input 
                         value = {keyword} 
                         onChange = {(e) => setKeyword(e.target.value)} 
                         placeholder = "Keyword" 
@@ -84,28 +84,14 @@ const JobSearch = () => {
                     {
                         keywordSuggestion && keywordSuggestion.map((item, index) => <div style = {{width: 500}}  onMouseOver = {() => setActive(index+1)} key = {item.job_id} onClick = {() => keywordClick(item.profile_name) } > {item.profile_name} </div>)
                     }
-                    </SuggestionBox>
+                    </SuggestionBox> */}
                     <br />
-                    <select className={styles.expOpt}  value = {experience} onChange = {(e) => setExperience(e.target.value)} >
-                        <option selected disabled value = "" hidden > Experience </option>
-                        <option value = "0" > 0 </option>
-                        <option value = "1" > 1 </option>
-                        <option value = "2" > 2 </option>
-                        <option value = "3" > 3 </option>
-                        <option value = "4" > 4 </option>
-                        <option value = "5" > 5 </option>
-                        <option value = "6" > 6 </option>
-                        <option value = "7" > 7 </option>
-                        <option value = "8" > 8 </option>
-                        <option value = "9" > 9 </option>
-                        <option value = "10" > 10 </option>
-                    </select>
-                    <input className={styles.locationOpt} placeholder = "Location" style = {{width: 350, height: 32, border: "2px solid lightgrey", padding: 5,  color: "darkgrey"}} value= {location} onChange = {(e) => setLocation(e.target.value)} />
+                    {/* <input className={styles.locationOpt} placeholder = "Location" style = {{width: 350, height: 32, border: "2px solid lightgrey", padding: 5,  color: "darkgrey"}} value= {location} onChange = {(e) => setLocation(e.target.value)} />
                         <SuggestionBox id={styles.locSuggestBox} active = {active} >
                         {
                             locationSuggestion && locationSuggestion.map((item, index) => <div onMouseOver = {() => setActive(index+1)} key = {item.job_id} onClick = {() => locationClick(item.location)} > {item.location} </div>)
                         }
-                        </SuggestionBox>
+                        </SuggestionBox> */}
                     <div style = {{display:'flex', flexDirection:'column'}}>
                         <input 
                             value = {keyword} 
@@ -115,7 +101,7 @@ const JobSearch = () => {
                         />
                         <SuggestionBox  id={styles.suggestBox} active = {active} >
                         {
-                            keywordSuggestion && keywordSuggestion.map((item, index) => <div style = {{width: 500}}  onMouseOver = {() => setActive(index+1)} key = {item.job_id} onClick = {() => keywordClick(item.profile_name) } > {item.profile_name} </div>)
+                            keywordSuggestion && keywordSuggestion.map((item, index) => <div style = {{width: 580}}  onMouseOver = {() => setActive(index+1)} key = {item.job_id} onClick = {() => keywordClick(item.profile_name) } > {item.profile_name} </div>)
                         }
                         </SuggestionBox>
                     </div>

@@ -9,8 +9,8 @@ const SuggestionBox = styled.div`
     & * {
         position: relative;
         width: 360px;
-        padding: 8px;
-        height: 20px;
+        padding: 40px;
+        height: 40px;
         backgroundColor: white;
         padding: 5px;
         border-bottom: 0.5px solid lightgrey

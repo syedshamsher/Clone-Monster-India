@@ -75,7 +75,7 @@ const JobSearchFirst = () => {
     console.log(keywordSuggestion)
     return (
         <div>
-            <h2 style = {{marginLeft: -980, marginTop: 50}} >Advance Job Search</h2>
+            <h2 style = {{marginLeft: -980, marginTop: 100}} >Advance Job Search</h2>
             <div style = {{margin: "20px 560px 200px 100px", padding: 20, background: "white"}} >
             <input 
                 value = {keyword} 
@@ -89,7 +89,7 @@ const JobSearchFirst = () => {
             }
             </SuggestionBox>
             <br />
-            <select style = {{width: 350, height: 45, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey"}} value = {experience} onChange = {(e) => setExperience(e.target.value)} >
+            <select style = {{width: 350, height:  32, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey"}} value = {experience} onChange = {(e) => setExperience(e.target.value)} >
             <option selected disabled value = "" hidden > Experience </option>
                         <option value = "0 - 1 Years" > 0 - 1 Years </option>
                         <option value = "1 - 2 Years" > 1 - 2 Years </option>
@@ -103,7 +103,7 @@ const JobSearchFirst = () => {
                 locationSuggestion && locationSuggestion.map((item, index) => <div onMouseOver = {() => setActive(index+1)} key = {item.job_id} onClick = {() => locationClick(item.location)} > {item.location} </div>)
             }
             </SuggestionBox>
-            <select style = {{height: 45, width: 715, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey", zIndex: 0}} value = {industry} onChange = {(e) => setIndustry(e.target.value)} >
+            <select style = {{height: 45, width: 700, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey", zIndex: 0}} value = {industry} onChange = {(e) => setIndustry(e.target.value)} >
                 <option disabled selected value = "" hidden >Industry</option>
                 <option value = "Software" > Software </option>
                 <option value = "Banking" > Banking </option>
@@ -111,7 +111,7 @@ const JobSearchFirst = () => {
                 <option value = "Recruitment" > Recruitment </option>
                 <option value = "E-Commerce" > E-Commerce </option>
             </select>
-            <select style = {{height: 45, width: 715, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey", zIndex: 0}} value = {functions} onChange = {(e) => setFunctions(e.target.value)} >
+            <select style = {{height: 45, width: 700, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey", zIndex: 0}} value = {functions} onChange = {(e) => setFunctions(e.target.value)} >
                 <option disabled selected value = "" hidden >Function</option>
                 <option value = "IT" > IT </option>
                 <option value = "Manufacturing/Engineering" > Manufacturing/Engineering </option>
@@ -119,7 +119,7 @@ const JobSearchFirst = () => {
                 <option value = "Advertising" > Advertising </option>
                 <option value = "Team Leader/Technical Leader" > Team Leader/Technical Leader </option>
             </select>
-            <select style = {{height: 45, width: 715, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey", zIndex: 0}} value = {role} onChange = {(e) => setRoles(e.target.value)} >
+            <select style = {{height: 45, width: 700, marginBottom: 20, border: "2px solid lightgrey", padding: 5,  color: "darkgrey", zIndex: 0}} value = {role} onChange = {(e) => setRoles(e.target.value)} >
                 <option disabled selected value = "" hidden >Role</option>
                 <option value = "Software Engineer/Programmer" > Software Engineer/Programmer </option>
                 <option value = "Application Designer Specialist" > Application Designer Specialist </option>

@@ -28,7 +28,7 @@ export const Applied = () => {
                     <p style = {{marginTop: 20, marginLeft: 20, lineHeight: -2}} > <b> You have successfully submitted your job application </b></p>
                 </div>
                 </div>
-                <hr style = {{marginTop: 70, marginLeft: 80, marginRight: 50, color: "darkgrey"}} />
+                <hr style = {{marginTop: 10, marginLeft: 80, marginRight: 50, color: "darkgrey"}} />
                 <p style = {{marginTop: 20, marginLeft: 50, color: "grey"}} > Let recruiters find you before your competition. Get <a href= "http://localhost:3000" >Monster Services</a> and get ahead. Monster Services and get ahead.</p>
             </div>
             

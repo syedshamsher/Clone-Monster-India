@@ -13,12 +13,13 @@ import { LandingPage } from "../Pages/Landing Page/LandingPage";
 import Login from "../Pages/LoginPage/LoginPage";
 import { useSelector } from "react-redux";
 import {Applied} from '../Pages/Applied/Applied'
+import Nav from "../Components/Nav/index"
 
 function Routes() {
   const isAuth = useSelector((state) => state.isauth);
   return (
     <div>
-      <Route path="/" component={Navbar} />
+      <Route path="/" component={Nav} />
       <Switch>
         {/* <Route path="/jobsearch-filter" exact component={Sidebar} /> */}
         <Route

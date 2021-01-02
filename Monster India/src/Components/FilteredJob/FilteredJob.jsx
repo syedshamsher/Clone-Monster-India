@@ -41,9 +41,9 @@ export const FilteredJob = () => {
                         <div  className = {styles.selectBox} >  
                            <div className = {styles.flexgrow}></div>
                            <div style = {{display:"flex", alignItems:"center"}}>
-                                <span>show: </span>
+                                <span> Show </span>
                                 <SelectOption onChange = {getItemsPerPage} value = {perPage}/>
-                                <span>perPage</span>
+                                <span>Per Page</span>
                            </div>
                            
                                 
@@ -69,7 +69,7 @@ export const FilteredJob = () => {
                             }) 
                     }
 
-                <div>
+                <div style = {{marginTop: "20px", display: "flex", justifyContent: "flex-end"}}>
                     {
                     currentPage <= 1 ? 
                         <button  style = {{ visibility: "hidden"}} onClick = {handlePrevious} >Previous</button>:

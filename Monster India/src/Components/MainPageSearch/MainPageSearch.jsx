@@ -10,7 +10,7 @@ import {CompanyCarousel} from "./Carousel/CompanyCarousel"
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2 },
+    { width: 550, itemsToShow: 3 },
     { width: 768, itemsToShow: 3 },
     { width: 1200, itemsToShow: 3 }
   ];
@@ -24,7 +24,7 @@ export const MainPageSearch = () => {
                 <RecentJobsCarousel breakPoints = {breakPoints} />
                 <WalkInJobCarousel breakPoints = {breakPoints}/>
                 
-                <div style = {{width: 940}}>
+                <div style = {{width: 900}}>
                   <JobVacancyContainer/>
 
                 </div>
