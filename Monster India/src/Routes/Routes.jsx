@@ -12,6 +12,7 @@ import { MainPageSearch } from "../Components/MainPageSearch/MainPageSearch";
 import { LandingPage } from "../Pages/Landing Page/LandingPage";
 import Login from "../Pages/LoginPage/LoginPage";
 import { useSelector } from "react-redux";
+import {Applied} from '../Pages/Applied/Applied'
 
 function Routes() {
   const isAuth = useSelector((state) => state.isauth);
@@ -31,7 +32,7 @@ function Routes() {
         <Route path="/careertips" component={CareerTips} />
         <Route path="/resumeservices" component={ResumeServices} />
         <Route path="/loginpage" component={Login} />
-        <Route path="/applied" component={CareerTips} />
+        <Route path="/applied" component={Applied} />
       </Switch>
     </div>
   );

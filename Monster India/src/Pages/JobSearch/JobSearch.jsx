@@ -66,7 +66,7 @@ const JobSearch = () => {
         dispatch(sendData(keyword, experience, location))
         window.location.reload()
     }
-    console.log(jobs)
+    // console.log(jobs)
 
 
     // console.log(jobs)
