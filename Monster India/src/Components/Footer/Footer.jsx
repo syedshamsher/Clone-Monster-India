@@ -29,7 +29,7 @@ function Footer() {
     <FooterStyles>
       <FooterWrap>
         <div style = {{textAlign: "left", marginRight: 30}} >
-          <h3>Job Seekers</h3>
+          <h3 style= {{color: "white"}} >Job Seekers</h3>
           <p>Job Search</p>
           <p>Job Seekers Login</p>
           <p>Upload Resume</p>
@@ -42,7 +42,7 @@ function Footer() {
       </FooterWrap>
       <FooterWrap>
         <div style = {{textAlign: "left", marginRight: 30}}>
-          <h3>Employers</h3>
+          <h3  style= {{color: "white"}}>Employers</h3>
           <p>Employers Login</p>
           <p>Access Resume Database</p>
           <p>Adverise with us</p>
@@ -54,7 +54,7 @@ function Footer() {
       </FooterWrap>
       <FooterWrap>
         <div style = {{textAlign: "left", marginRight: 30}}> 
-          <h3>Monster</h3>
+          <h3  style= {{color: "white"}}>Monster</h3>
           <p>About Us</p>
           <p>Career With Us</p>
           <p>Testimonials</p>
@@ -67,7 +67,7 @@ function Footer() {
       </FooterWrap>
       <FooterWrap style = {{textAlign: "left", marginRight: 30}}>
         <div>
-          <h3>Stay Connected</h3>
+          <h3  style= {{color: "white"}}>Stay Connected</h3>
           <p>Facebook</p>
           <p>Linkedin</p>
           <p>Youtube</p>
@@ -77,7 +77,7 @@ function Footer() {
       </FooterWrap>
       <FooterWrap style = {{textAlign: "left", marginRight: 30}}>
         <div>
-          <h3>Legal</h3>
+          <h3  style= {{color: "white"}}>Legal</h3>
           <p>Security & Fraud</p>
           <p>Terms of Use</p>
           <p>Complaints</p>

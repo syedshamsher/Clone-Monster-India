@@ -43,6 +43,7 @@ function SelectOption( {onChange ,value} )
           onOpen={handleOpen}
           value={value}
           onChange={(e) => onChange( e.target.value)}
+          style = {{width: 60, height: 30, paddingBottom: 14}}
           
         >
           <MenuItem value={2}>2</MenuItem>

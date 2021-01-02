@@ -12,7 +12,7 @@ function JobPage(props) {
   return (
     <div>
       <div>
-        <div style = {{fontSize: 30, color: "grey", marginLeft: -1000, marginTop: 50}} > About the Job in Detail </div>
+        <div style = {{fontSize: 30, color: "grey", marginLeft: -1000, marginTop: 120}} > About the Job in Detail </div>
         {/* <div className={styles.right}>
           <StarBorderIcon style={{ color: "#9B9B9B", height: 80 }} />
           <ShareIcon style={{ color: "#9B9B9B", height: 80  }} />

@@ -5,10 +5,10 @@ export const CarouselItem = ({data}) => {
  
     return (
       <>
-        <h4>{data.company_name}</h4>
-        <p style = {{color: "grey"}} >{data.function} </p>
-        <p>Experience:{data.experience}</p>
-        <p>location:{data.location } </p>
+        <h4  style = {{marginTop: -10}}>{data.company_name}</h4>
+        <p style = {{color: "grey", marginTop: -5}} >{data.function} </p>
+        <p style = {{marginTop: -10}}>Experience:{data.experience}</p>
+        <p  style = {{marginTop: -10}} >location:{data.location } </p>
       </>
     )
 }
