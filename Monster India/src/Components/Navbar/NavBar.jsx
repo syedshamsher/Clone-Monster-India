@@ -53,7 +53,7 @@ export default function NavBar() {
   let history = useHistory()
 
   const handleLandingPage = () => {
-    history.push('/landingpage')
+    history.push('/')
   }
 
   const handleJobSearch = (event) => {
