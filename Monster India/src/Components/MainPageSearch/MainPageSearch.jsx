@@ -7,6 +7,7 @@ import { RecentJobsCarousel } from './Carousel/RecentJobsCarousel/RecentJobsCaro
 import {JobVacancyContainer} from  "./JobVacancyContainer"
 import Footer from '../Footer/Footer'
 import {CompanyCarousel} from "./Carousel/CompanyCarousel"
+import { LandingAdd } from '../Advertisements/LandingAdd/LandingAdd'
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -18,7 +19,8 @@ export const MainPageSearch = () => {
     return (
         <div className = "wrapper">
             <MainPageSearchBarContainer/>
-            <div style = {{ paddingLeft: "120px"}}>
+            <div style = {{display: "flex", justifyContent: "space-evenly"}} >
+            <div >
                <CompanyCarousel breakPoints = {breakPoints} />
                 <CarouselContainer breakPoints = {breakPoints}  />
                 <RecentJobsCarousel breakPoints = {breakPoints} />
@@ -29,6 +31,11 @@ export const MainPageSearch = () => {
 
                 </div>
             </div>
+            <div style = {{marginTop: 30}} >
+                <LandingAdd/>
+              </div>
+            </div>
+            
             <br /> <br />
             <Footer />
         

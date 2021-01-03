@@ -29,23 +29,23 @@ export const MainPageSearchBarContainer = () => {
                    <div className ="inside_div">
                        <div className = "user_details">
                            <div style = {{alignItems: "left"}}>
-                           <h4> Anusha </h4>
+                           <h4> Anant Jain </h4>
                            </div>
-                           <div style = {{marginLeft: 250}} >
+                           <div style = {{marginLeft: 240}} >
                                 <p style = {{marginLeft: 40, color: "green", fontWeight: 700, fontSize: 18}} >74%</p>
-                                <p style= {{fontSize: 14}} >Profile Score</p>
+                                <p style= {{fontSize: 14, marginTop: -10}} >Profile Score</p>
                            </div>
                            
                         </div>
                        <div className = "recommended_jobs">
-                            <div style= {{padding: 2, color: "white"}} >100</div>
+                            <div style= {{padding: 7, paddingLeft: 5, color: "white"}} >100</div>
                             <p style = {{marginRight: 50}} >Recommended jobs for you</p>
                             <a style ={{marginTop: 5}} href = ""><h5>View Jobs</h5> </a>
                        </div>
                        <div className = "alerts">
                             <div className = "pending_actions">
                                 <div className = "pending_num">
-                                    <div style= {{padding: 2, color: "white", marginRight: 10}}> 30 </div>
+                                    <div style= {{padding: 5, color: "white", marginRight: 10}}> 30 </div>
                                     <p>Pending Actions</p>
 
                                 </div>

@@ -6,21 +6,38 @@ import WorkIcon from "@material-ui/icons/Work";
 import ShareIcon from "@material-ui/icons/Share";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import Footer from "../../Components/Footer/Footer";
+import { useHistory, useParams } from "react-router-dom";
+import useSelection from "antd/lib/table/hooks/useSelection";
+import { useSelector } from "react-redux";
+import {JobDetailAdd} from "../../Components/Advertisements/JobDetailAdd"
 
 function JobPage(props) {
+    let history = useHistory();
+    const isAuth = useSelector((state) => state.auth.isAuth);
+    const params = useParams()
+    const id = params.id
+  
+    const handleApply = () => {
+      if (isAuth) {
+        history.push(`/applied/${id}`);
+        console.log(isAuth);
+      } else {
+        history.push("/loginpage");
+        console.log(isAuth);
+      }
+    };
   console.log( props.data )
+  console.log(params)
   return (
     <div>
+      <div style = {{display: "flex", justifyContent: "space-evenly"}} >
+      <div>
       <div>
         <div style = {{fontSize: 30, color: "grey", marginLeft: -1000, marginTop: 120}} > About the Job in Detail </div>
-        {/* <div className={styles.right}>
-          <StarBorderIcon style={{ color: "#9B9B9B", height: 80 }} />
-          <ShareIcon style={{ color: "#9B9B9B", height: 80  }} />
-          <button className={styles.applyBtn}>Apply</button>
-        </div> */}
+        <div onClick = {handleApply} style = {{cursor: "pointer", padding: 5, marginTop: -30, fontSize: 15, marginLeft: 850, marginRight: 502, border: "1px solid #6C54DA"}} > APPLY </div>
       </div>
       <div className={styles.main}>
-        <div style = {{height: 120, width: 1000, marginBottom: 0}} >
+        <div style = {{height: 120, width: 900, marginBottom: 0}} >
           <div className={styles.profileName}>
             {props.data.profile_name}
           </div>
@@ -98,9 +115,15 @@ function JobPage(props) {
         <h2 >About {props.data.company_name} </h2>
         <div style= {{marginTop: 20, lineHeight: 2}}>We are a one stop solution for all types of industry recruitment. We are the leading job consultancy service providers in the industry with specialization in almost all sectors ranging from medical, hospitality, automotive, airlines, Engineering, banking to logistics, the list is endless. We completely analyze and understand our client's expectations for the recruitment and thus, strive hard to meet the same in highly professional manner.</div>
       </div>
+      </div>
+      {/* <div>
+        <JobDetailAdd />
+      </div> */}
+      </div>
       <br/>
-      <Footer />
+      <Footer /> 
     </div>
+
   );
 }
 

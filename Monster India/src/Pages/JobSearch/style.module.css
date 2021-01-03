@@ -25,7 +25,7 @@
 .addsWrapper {
     width: 200px;
     height: 700px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-top: 20px;
 }
 
@@ -128,4 +128,12 @@
     outline: none;
     border: none;
     color: white;
+}
+
+.searchItems {
+    color: rgb(143, 142, 142);
+    height: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    margin-left: 30px;
 }

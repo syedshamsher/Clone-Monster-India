@@ -13,6 +13,8 @@ import  Footer  from '../../Components/Footer/Footer'
 const JobSearch = () => {
     const dispatch = useDispatch()
     const data = useSelector(state => state.jobs.jobs)
+    const filteredJobs = useSelector(state => state.filteredJobs)
+    const keyword2  = useSelector(state => state.jobsFirst.keyword)
     const [keyword, setKeyword] = React.useState("")
     const [location, setLocation] = React.useState("")
     const [locationSuggestion, setLocationSuggestion] = React.useState("")
@@ -72,6 +74,7 @@ const JobSearch = () => {
     // console.log(jobs)
     return (
         <div className={styles.wrapper} style = {{marginTop: 80}} >
+
                 <div className={styles.searchBarWrapper}>
                     {/*SearchBar*/}
                     {/* <input 
@@ -97,7 +100,7 @@ const JobSearch = () => {
                             value = {keyword} 
                             onChange = {(e) => setKeyword(e.target.value)} 
                             placeholder = "Keyword" 
-                            style = {{height: '45px', width: '580px', marginLeft:'15px',outline:'none', border: "none", color: "darkgrey"}}
+                            style = {{height: '45px', width: '580px', marginLeft:'40px',outline:'none', border: "none", color: "darkgrey"}}
                         />
                         <SuggestionBox  id={styles.suggestBox} active = {active} >
                         {
@@ -124,12 +127,20 @@ const JobSearch = () => {
                     </div>
                     <button className={styles.searchBtn} onClick= {handleClick} >Search</button>
                 </div>
+                <div className={styles.searchItems}>
+                    <h1 className={styles.searchItems}>Search Results - {filteredJobs.jobs.length}</h1>
+                </div>
              <div className={styles.main}>
                 <div className={styles.sidebarWrapper}>
                     <Sidebar />
                 </div>
                 <div className={styles.midBodyWrapper}>
-                    
+                    <div>
+                        {
+                            keyword2 === "" ? "" : <div> Search Results for: {keyword2} </div>
+                        }
+                    </div>
+
                     <div>
                         <FilteredJob/>
                     </div>

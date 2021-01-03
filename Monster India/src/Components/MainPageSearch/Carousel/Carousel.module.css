@@ -11,6 +11,7 @@
     padding:20px;
     text-align: left;
     margin-bottom: 20px;
+    border: 0px
 }
 
 .carousel_wrapper div{
@@ -22,7 +23,7 @@
     /* border:1px solid black; */
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     
 
 }
