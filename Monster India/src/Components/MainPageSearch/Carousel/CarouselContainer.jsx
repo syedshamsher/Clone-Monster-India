@@ -32,7 +32,7 @@ export const CarouselContainer = ({ breakPoints }) => {
                     ?.filter((item) => item.job_type.toLowerCase() == "work from home")
                     .map((item) => {
                         return (
-                            <div key = {item.job_id} style = {{border: "1px solid grey"}}
+                            <div key = {item.job_id} 
                                 className={styles.mainContainer}
                                 onClick={() => goToJobDetails(item.job_id)}
                             >

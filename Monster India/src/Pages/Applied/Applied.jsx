@@ -3,20 +3,6 @@ import { useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
 
 export const Applied = () => {
-    // const [data, setData] = React.useState({})
-    // const jobs = useSelector(state => state.jobs.jobs)
-    // const {id} = useParams()
-
-    // const id  = ( params.id )
-
-    // React.useEffect( () =>{
-    //     const obj = jobs.find( (item) => item.job_id === id )
-    //     console.log(obj)
-    //     setData(obj)
-
-    // },[] )
-    
-    // console.log(id)
     return (
         <div>
             <p style = {{marginLeft: -1050, fontSize: 30, marginTop: 30}} >Job Applied</p>
