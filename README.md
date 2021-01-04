@@ -1,6 +1,15 @@
 # Team Triangle - Monster India Clone
 In the project directory, tried to clone monsterindia.com. monsterindia.com connects job seekers and recruiters by accurately matching candidate profiles to the relevant job. Based on this we build a website which searches the jobs with relevant filters and curating the jobs matching the filters and allowing the user to display the relevant jobs.
 
+## Landing Page
+![Screenshot (939)](https://user-images.githubusercontent.com/64468383/103500849-5852ed00-4e72-11eb-8224-0d20e5b2b3fb.png)
+
+![Screenshot (940)](https://user-images.githubusercontent.com/64468383/103500882-820c1400-4e72-11eb-822d-428f9a855e10.png)
+
+## Job Search Page(with Filters)
+
+![Screenshot (941)](https://user-images.githubusercontent.com/64468383/103500914-9cde8880-4e72-11eb-93e6-1cb04ed690b3.png)
+
 ## Developer’s setup guide
 
 ### clone https://github.com/Anantjain226/Clone-Monster-India.git
