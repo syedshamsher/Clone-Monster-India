@@ -29,7 +29,14 @@ In the project directory, tried to clone monsterindia.com. monsterindia.com conn
 
 ## Contributors
 
-Anantjain226
-anusha-007
-syedshamsher
-BikramJagdev
+### Anantjain226
+
+### anusha-007
+
+### syedshamsher
+
+### BikramJagdev
+
+## Acknowledgment
+
+We take responsibility for every single line of code in this project . The project is inspired by Monster-India.com .
