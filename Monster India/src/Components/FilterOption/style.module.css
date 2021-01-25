@@ -1,49 +1,51 @@
+.wrapper {
+  display: flex;
+  background-color: white;
+  width: 280px;
+}
+
 .header {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 250px;
-    display: flex;
-    align-items: flex-start;
-    margin-left: 10px;
-    color: grey;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 230px;
+  display: flex;
+  align-items: flex-start;
+  margin-left: 10px;
+  color: grey;
 }
 
 .headerWrapper {
-    width: 250px;
+  width: 230px;
 }
 
 .main {
-    display: flex;
-    justify-content: space-between;
-    width: 250px;
-    margin: 10px;
-    font-weight: 700;
-  }
-  
-  .options {
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 10px;
-  }
-  
-  .divider {
-    width: 270px;
-    border-bottom: 1px solid rgb(209, 203, 203)
-  }
+  display: flex;
+  justify-content: space-between;
+  max-width: 250px;
+  margin: 10px;
+  font-weight: 700;
+}
 
-  .wrapper {
-    background-color: white;
-    width: 270px;
-  }
+.options {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px;
+}
 
-  .plus {
-      font-size: 25px;
-      cursor: pointer;
-  }
+.divider {
+  width: 280px;
+  border-bottom: 1px solid rgb(209, 203, 203)
+}
 
-  .minus {
-      font-size: 28px;
-      cursor: pointer;
-  }
+
+.plus {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.minus {
+    font-size: 28px;
+    cursor: pointer;
+}

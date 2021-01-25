@@ -1,0 +1,1 @@
+export {JobVacancyContainer} from "./JobVacancyContainer"

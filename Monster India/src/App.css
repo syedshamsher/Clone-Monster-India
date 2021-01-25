@@ -1,3 +1,8 @@
+body {
+  --monster-color: #6C54DA;
+  --monster-background: #F5F5F5;
+}
+
 .App {
   text-align: center;
 }
@@ -39,4 +44,27 @@ body{
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.rec.rec-arrow {
+  background-color: white;
+  color: black;
+}
+
+.rec.rec-arrow:focus {
+  background-color: white;
+  color: black;
+}
+.rec.rec-arrow:hover {
+  background-color: white;
+  color: black;
+}
+.rec.rec-arrow:active {
+  background-color: white;
+}
+
+.rec-carousel-item:focus {
+  outline: none;
+  box-shadow: inset 0 0 1px 1px white;
 }

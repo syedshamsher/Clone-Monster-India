@@ -7,7 +7,6 @@ import styles from './style.module.css';
 
 export function JobCard() {
     const jobs = useSelector( state => state.jobs )
-    console.log( jobs.jobs )
     const dispatch = useDispatch()
 
     React.useEffect(() => {
@@ -18,7 +17,7 @@ export function JobCard() {
             {
                 jobs.jobs?.map((item) => {
                     return (
-                        <div className={styles.cardDiv}>
+                        <div className={styles.cardDiv} key={item.job_id}>
                             <Card jobs = {item}/>
                             <Footer jobs={item} />
                         </div>

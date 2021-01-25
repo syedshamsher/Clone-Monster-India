@@ -1,9 +1,10 @@
 .wrapper {
-    width: 650px;
+    width: 700px;
+    text-align: left;
 }
 
 .main {
-    background-color: white;
+    background-color: var(--monster-background);
 }
 
 .profileName {
@@ -23,10 +24,13 @@
 
 .locExpSal {
     display: flex;
+    justify-content: space-between;
+    margin-right: 80px;
 }
 
 .locExpSalChild {
     display: flex;
+
     margin: 10px;
     margin-top: -5px;
 }
@@ -38,13 +42,14 @@
 .footerWrapper {
     background-color: #EBEBEB;
     display: flex;
-    width: 650px;
+    width: 700px;
     height: 50px;
     justify-content: space-between;
 }
 
 .left {
-    margin: 10px;
+    margin: 15px;
+    color: "#A8A8A8";
 }
 .right {
     display: flex;
@@ -54,7 +59,8 @@
 
 .right > button {
     margin-left: 10px;
-    border: 2px solid #6C54DA
+    border: 2px solid #6C54DA;
+    width: 80px;
 }
 
 .right > button:hover {

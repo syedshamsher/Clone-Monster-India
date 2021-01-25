@@ -1,0 +1,62 @@
+.cardContainer{
+    background-color: grey;
+    width:150px;
+}
+
+
+.carousel_wrapper{
+    background-color: white;
+    width:900px;
+    margin-top: 30px;
+    padding:20px;
+    text-align: left;
+    margin-bottom: 20px;
+    border: 0px
+}
+
+.carousel_wrapper div{
+    text-align: left;
+}
+
+.header{
+    width: 100%;
+    /* border:1px solid black; */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+
+}
+.title{
+    font-size: 20px;;
+    flex-grow: 1;
+    font-weight: 900;
+    align-items: left;
+}
+.header a{
+    color: blue;
+}
+.header a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.mainContainer{
+    align-items: center;
+    padding: 15px;
+    height: 130px;
+    width: 100%;
+    background-color:whitesmoke;
+    color: black;
+    margin: 0 15px;
+    box-sizing: border-box;
+    
+
+}
+
+.companyImageContainer{
+    width: 100px;
+    border-radius: 15px;
+    color: black;
+    margin: 0 15px;
+}

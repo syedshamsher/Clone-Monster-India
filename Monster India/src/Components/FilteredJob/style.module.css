@@ -1,0 +1,45 @@
+.cardCont:hover {
+    box-shadow: 0 0 10px rgb(165, 161, 161);
+}
+
+.pgnlimitDiv {
+    background-color:white;
+    width: 700px;
+    height: 60px;
+}
+
+.prevButton , .nextButton{
+    border:none;
+    outline: none;
+    cursor: pointer;
+    padding:10px;
+    width:100px;
+    margin-bottom: 15px;
+    /* border-radius: 1px solid blue; */
+  }
+
+  .prevButton{
+    color: darkslateblue;
+    background-color: white;
+    
+  }
+  .nextButton{
+    background-color: darkslateblue;
+    color:white;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  .prevButton:hover{
+    color:white;
+    background-color: darkslateblue;
+
+  }
+
+  .selectBox{
+    display :flex;
+
+  }
+  .flexgrow{
+      flex-grow: 1;
+  }
